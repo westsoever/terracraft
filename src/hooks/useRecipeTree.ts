@@ -11,6 +11,7 @@ export function useRecipeTree(): {
   const selectedItemId = useAppStore((s) => s.selectedItemId);
   const quantity = useAppStore((s) => s.quantity);
   const recipeSelections = useAppStore((s) => s.recipeSelections);
+  const haveItems = useAppStore((s) => s.haveItems);
 
   const treeRoot = useMemo(() => {
     if (!selectedItemId) return null;
@@ -19,8 +20,8 @@ export function useRecipeTree(): {
 
   const shoppingList = useMemo(() => {
     if (!treeRoot) return [];
-    return computeShoppingList(treeRoot);
-  }, [treeRoot]);
+    return computeShoppingList(treeRoot, haveItems);
+  }, [treeRoot, haveItems]);
 
   return { treeRoot, shoppingList };
 }

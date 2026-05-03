@@ -11,9 +11,12 @@ export function useSearch(): { results: Item[] } {
     let base: Item[];
 
     if (searchQuery.trim() === '') {
-      base = allItems;
+      base = allItems.filter((i) => recipesByResultId.has(i.id));
     } else {
-      base = itemSearchIndex.search(searchQuery).map((r) => r.item);
+      base = itemSearchIndex
+        .search(searchQuery)
+        .filter((r) => recipesByResultId.has(r.item.id))
+        .map((r) => r.item);
     }
 
     if (stationFilter) {

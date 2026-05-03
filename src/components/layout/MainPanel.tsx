@@ -1,17 +1,11 @@
 import { useAppStore } from '@/store/useAppStore';
-import { useRecipeTree } from '@/hooks/useRecipeTree';
 import { itemById } from '@/lib/recipeIndex';
-import { RecipeTreeView } from '@/components/tree/RecipeTreeView';
 import { RecipeGraph } from '@/components/graph/RecipeGraph';
-import { ShoppingList } from '@/components/shopping/ShoppingList';
 
 export function MainPanel() {
   const selectedItemId = useAppStore((s) => s.selectedItemId);
-  const activeTab = useAppStore((s) => s.activeTab);
-  const setActiveTab = useAppStore((s) => s.setActiveTab);
   const quantity = useAppStore((s) => s.quantity);
   const setQuantity = useAppStore((s) => s.setQuantity);
-  const { treeRoot } = useRecipeTree();
 
   const selectedItem = selectedItemId ? itemById.get(selectedItemId) : null;
 
@@ -30,20 +24,8 @@ export function MainPanel() {
         </div>
       </div>
 
-      {selectedItemId && treeRoot && (
+      {selectedItemId && (
         <>
-          <div className="tab-bar">
-            {(['tree', 'graph', 'shopping'] as const).map((tab) => (
-              <button
-                key={tab}
-                className={`t-btn${activeTab === tab ? ' active' : ''}`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab === 'tree' ? '🌿 Tree' : tab === 'graph' ? '🔗 Graph' : '📋 Shopping'}
-              </button>
-            ))}
-          </div>
-
           <div className="qty-row">
             <span className="qty-label">Quantity:</span>
             <div className="qty-stepper">
@@ -59,10 +41,8 @@ export function MainPanel() {
             </div>
           </div>
 
-          <div className="panel-content" style={{ padding: activeTab === 'graph' ? 0 : '10px' }}>
-            {activeTab === 'tree' && <RecipeTreeView />}
-            {activeTab === 'graph' && <RecipeGraph />}
-            {activeTab === 'shopping' && <ShoppingList />}
+          <div className="panel-content" style={{ padding: 0 }}>
+            <RecipeGraph />
           </div>
         </>
       )}
@@ -73,7 +53,7 @@ export function MainPanel() {
             <div className="empty-state-icon">⛏</div>
             <div className="empty-state-title">No item selected</div>
             <div className="empty-state-sub">
-              Search for an item in the sidebar to see its crafting recipe tree, visual graph, and shopping list.
+              Search for an item in the sidebar to see its crafting recipe graph.
             </div>
           </div>
         </div>

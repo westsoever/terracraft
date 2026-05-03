@@ -310,92 +310,6 @@ body {
 .empty-state-title { font-size: 10px; color: var(--text-dim); }
 .empty-state-sub { font-size: 8px; color: var(--border-dark); max-width: 280px; line-height: 1.8; }
 
-/* ── Tree view ───────────────────────────────────────────────── */
-.tree-root { padding: 4px 0; }
-
-.tree-node {
-  display: flex;
-  flex-direction: column;
-}
-
-.tree-node-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 6px;
-  border-radius: 2px;
-  cursor: default;
-}
-.tree-node-row:hover { background: var(--bg-slot-hover); }
-
-.tree-indent { display: flex; align-items: stretch; }
-.tree-indent-line {
-  width: 16px;
-  border-right: 1px solid var(--border-dark);
-  flex-shrink: 0;
-}
-
-.tree-toggle {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--text-dim);
-  font-size: 8px;
-  user-select: none;
-}
-.tree-toggle:hover { color: var(--accent-gold); }
-.tree-toggle-spacer { width: 14px; flex-shrink: 0; }
-
-.tree-item-name {
-  font-size: 8px;
-  color: var(--text-primary);
-  flex: 1;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tree-qty {
-  font-size: 8px;
-  color: var(--accent-gold);
-  flex-shrink: 0;
-}
-
-.tree-children { margin-left: 0; }
-
-.alt-recipe-select { width: auto; max-width: 160px; font-size: 7px; }
-
-/* ── Shopping list ───────────────────────────────────────────── */
-.shopping-list { display: flex; flex-direction: column; gap: 4px; }
-
-.shopping-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 10px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--border-dark);
-}
-
-.shopping-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 8px;
-  background: var(--bg-slot);
-  border: 1px solid var(--border-dark);
-  border-radius: 2px;
-}
-.shopping-row:hover { border-color: var(--border-gold); }
-
-.shopping-item-name { font-size: 8px; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.shopping-qty { font-size: 9px; color: var(--accent-gold); flex-shrink: 0; }
-
 /* ── React Flow overrides ────────────────────────────────────── */
 .react-flow__background { background: var(--bg-deep) !important; }
 .react-flow__controls { background: var(--bg-panel) !important; border: 1px solid var(--border-dark) !important; }
@@ -463,4 +377,71 @@ body {
   font-size: 7px;
   color: var(--text-dim);
   pointer-events: none;
+}
+
+/* ── Item node: have state ──────────────────────────────────────── */
+.item-node.have { opacity: 0.4; }
+
+.item-node-check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 7px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+}
+.item-node-check input[type=checkbox] {
+  accent-color: var(--accent-green);
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+}
+
+/* ── Shopping panel (graph right side) ─────────────────────────── */
+.shopping-panel {
+  width: 220px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border-left: 2px solid var(--border-dark);
+  overflow: hidden;
+}
+
+.shopping-panel-header {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-dark);
+  flex-shrink: 0;
+}
+
+.shopping-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.shopping-panel-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--border-dark);
+}
+.shopping-panel-row:hover { background: var(--bg-slot-hover); }
+.shopping-panel-row:last-child { border-bottom: none; }
+
+.shopping-panel-name {
+  font-size: 7px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shopping-panel-qty {
+  font-size: 8px;
+  color: var(--accent-gold);
+  flex-shrink: 0;
 }

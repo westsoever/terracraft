@@ -1,19 +1,20 @@
 import type { RecipeTreeNode, ShoppingEntry } from '@/types/terraria';
 import { itemById } from './recipeIndex';
 
-function accumulate(node: RecipeTreeNode, acc: Map<string, number>): void {
+function accumulate(node: RecipeTreeNode, acc: Map<string, number>, haveItems: Set<string>): void {
+  if (haveItems.has(node.itemId)) return;
   if (node.children.length === 0) {
     acc.set(node.itemId, (acc.get(node.itemId) ?? 0) + node.quantityNeeded);
     return;
   }
   for (const child of node.children) {
-    accumulate(child, acc);
+    accumulate(child, acc, haveItems);
   }
 }
 
-export function computeShoppingList(treeRoot: RecipeTreeNode): ShoppingEntry[] {
+export function computeShoppingList(treeRoot: RecipeTreeNode, haveItems: Set<string> = new Set()): ShoppingEntry[] {
   const acc = new Map<string, number>();
-  accumulate(treeRoot, acc);
+  accumulate(treeRoot, acc, haveItems);
 
   return Array.from(acc.entries())
     .map(([itemId, totalQuantity]) => ({

@@ -11,7 +11,7 @@ export function buildGraphFromTree(treeRoot: RecipeTreeNode): {
   edges: Edge[];
 } {
   const g = new dagre.graphlib.Graph();
-  g.setGraph({ rankdir: 'TB', nodesep: 50, ranksep: 80, marginx: 20, marginy: 20 });
+  g.setGraph({ rankdir: 'RL', nodesep: 40, ranksep: 120, marginx: 20, marginy: 20 });
   g.setDefaultEdgeLabel(() => ({}));
 
   const nodes: Node<ItemNodeData>[] = [];
@@ -42,8 +42,8 @@ export function buildGraphFromTree(treeRoot: RecipeTreeNode): {
       g.setEdge(parentNodeId, nodeId);
       edges.push({
         id: edgeId,
-        source: parentNodeId,
-        target: nodeId,
+        source: nodeId,
+        target: parentNodeId,
         label: stationName,
         markerEnd: { type: MarkerType.ArrowClosed, color: '#c8a84b' },
         style: { stroke: '#c8a84b', strokeWidth: 1.5 },
