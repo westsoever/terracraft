@@ -1,0 +1,13 @@
+[
+  { "id": "by_hand", "name": "By Hand", "sprite": "" },
+  { "id": "work_bench", "name": "Work Bench", "sprite": "" },
+  { "id": "furnace", "name": "Furnace", "sprite": "" },
+  { "id": "iron_anvil", "name": "Iron Anvil", "sprite": "" },
+  { "id": "alchemy_table", "name": "Alchemy Table", "sprite": "" },
+  { "id": "loom", "name": "Loom", "sprite": "" },
+  { "id": "sawmill", "name": "Sawmill", "sprite": "" },
+  { "id": "keg", "name": "Keg", "sprite": "" },
+  { "id": "cooking_pot", "name": "Cooking Pot", "sprite": "" },
+  { "id": "tinkerers_workshop", "name": "Tinkerer's Workshop", "sprite": "" },
+  { "id": "mythril_anvil", "name": "Mythril Anvil", "sprite": "" }
+]

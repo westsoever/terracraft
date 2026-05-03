@@ -1,0 +1,75 @@
+[
+  { "id": "iron_bar_from_ore", "resultItemId": "iron_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "gold_bar_from_ore", "resultItemId": "gold_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_ore", "quantity": 4 }], "stationId": "furnace" },
+  { "id": "silver_bar_from_ore", "resultItemId": "silver_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "silver_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "copper_bar_from_ore", "resultItemId": "copper_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "tin_bar_from_ore", "resultItemId": "tin_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "tin_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "lead_bar_from_ore", "resultItemId": "lead_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "lead_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "tungsten_bar_from_ore", "resultItemId": "tungsten_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "tungsten_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "platinum_bar_from_ore", "resultItemId": "platinum_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "platinum_ore", "quantity": 4 }], "stationId": "furnace" },
+  { "id": "cobalt_bar_from_ore", "resultItemId": "cobalt_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "cobalt_ore", "quantity": 3 }], "stationId": "furnace" },
+  { "id": "mythril_bar_from_ore", "resultItemId": "mythril_bar", "resultQuantity": 1, "ingredients": [{ "itemId": "mythril_ore", "quantity": 4 }], "stationId": "furnace" },
+
+  { "id": "glass_from_sand", "resultItemId": "glass", "resultQuantity": 2, "ingredients": [{ "itemId": "sand_block", "quantity": 2 }], "stationId": "furnace" },
+  { "id": "torch_from_wood_gel", "resultItemId": "torch", "resultQuantity": 3, "ingredients": [{ "itemId": "wood", "quantity": 1 }, { "itemId": "gel", "quantity": 1 }], "stationId": "by_hand" },
+  { "id": "silk_from_cobweb", "resultItemId": "silk", "resultQuantity": 1, "ingredients": [{ "itemId": "cobweb", "quantity": 7 }], "stationId": "loom" },
+
+  { "id": "work_bench_recipe", "resultItemId": "work_bench", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 10 }], "stationId": "by_hand" },
+  { "id": "furnace_recipe", "resultItemId": "furnace", "resultQuantity": 1, "ingredients": [{ "itemId": "stone_block", "quantity": 20 }, { "itemId": "wood", "quantity": 4 }, { "itemId": "torch", "quantity": 3 }], "stationId": "work_bench" },
+  { "id": "iron_anvil_recipe", "resultItemId": "iron_anvil", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_bar", "quantity": 5 }], "stationId": "work_bench" },
+  { "id": "sawmill_recipe", "resultItemId": "sawmill", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 10 }, { "itemId": "iron_bar", "quantity": 2 }, { "itemId": "iron_chain", "quantity": 1 }], "stationId": "work_bench" },
+  { "id": "loom_recipe", "resultItemId": "loom", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 12 }], "stationId": "sawmill" },
+
+  { "id": "wooden_sword_recipe", "resultItemId": "wooden_sword", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 7 }], "stationId": "work_bench" },
+  { "id": "wooden_bow_recipe", "resultItemId": "wooden_bow", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 10 }], "stationId": "work_bench" },
+  { "id": "copper_sword_recipe", "resultItemId": "copper_sword", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_bar", "quantity": 7 }], "stationId": "iron_anvil" },
+  { "id": "copper_broadsword_recipe", "resultItemId": "copper_broadsword", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_bar", "quantity": 8 }], "stationId": "iron_anvil" },
+  { "id": "iron_sword_recipe", "resultItemId": "iron_sword", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_bar", "quantity": 7 }], "stationId": "iron_anvil" },
+  { "id": "iron_broadsword_recipe", "resultItemId": "iron_broadsword", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_bar", "quantity": 8 }], "stationId": "iron_anvil" },
+  { "id": "gold_sword_recipe", "resultItemId": "gold_sword", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_bar", "quantity": 7 }], "stationId": "iron_anvil" },
+  { "id": "gold_broadsword_recipe", "resultItemId": "gold_broadsword", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_bar", "quantity": 8 }], "stationId": "iron_anvil" },
+  { "id": "mythril_sword_recipe", "resultItemId": "mythril_sword", "resultQuantity": 1, "ingredients": [{ "itemId": "mythril_bar", "quantity": 8 }], "stationId": "mythril_anvil" },
+
+  { "id": "copper_helmet_recipe", "resultItemId": "copper_helmet", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_bar", "quantity": 15 }], "stationId": "iron_anvil" },
+  { "id": "copper_chainmail_recipe", "resultItemId": "copper_chainmail", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_bar", "quantity": 20 }], "stationId": "iron_anvil" },
+  { "id": "copper_greaves_recipe", "resultItemId": "copper_greaves", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_bar", "quantity": 15 }], "stationId": "iron_anvil" },
+  { "id": "iron_helmet_recipe", "resultItemId": "iron_helmet", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_bar", "quantity": 15 }], "stationId": "iron_anvil" },
+  { "id": "iron_chainmail_recipe", "resultItemId": "iron_chainmail", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_bar", "quantity": 20 }], "stationId": "iron_anvil" },
+  { "id": "iron_greaves_recipe", "resultItemId": "iron_greaves", "resultQuantity": 1, "ingredients": [{ "itemId": "iron_bar", "quantity": 15 }], "stationId": "iron_anvil" },
+  { "id": "gold_helmet_recipe", "resultItemId": "gold_helmet", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_bar", "quantity": 15 }], "stationId": "iron_anvil" },
+  { "id": "gold_chainmail_recipe", "resultItemId": "gold_chainmail", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_bar", "quantity": 20 }], "stationId": "iron_anvil" },
+  { "id": "gold_greaves_recipe", "resultItemId": "gold_greaves", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_bar", "quantity": 15 }], "stationId": "iron_anvil" },
+  { "id": "mythril_helmet_recipe", "resultItemId": "mythril_helmet", "resultQuantity": 1, "ingredients": [{ "itemId": "mythril_bar", "quantity": 10 }], "stationId": "mythril_anvil" },
+  { "id": "mythril_chainmail_recipe", "resultItemId": "mythril_chainmail", "resultQuantity": 1, "ingredients": [{ "itemId": "mythril_bar", "quantity": 15 }], "stationId": "mythril_anvil" },
+  { "id": "mythril_greaves_recipe", "resultItemId": "mythril_greaves", "resultQuantity": 1, "ingredients": [{ "itemId": "mythril_bar", "quantity": 12 }], "stationId": "mythril_anvil" },
+
+  { "id": "wooden_arrow_recipe", "resultItemId": "wooden_arrow", "resultQuantity": 10, "ingredients": [{ "itemId": "wood", "quantity": 1 }, { "itemId": "stone_block", "quantity": 1 }], "stationId": "by_hand" },
+  { "id": "flaming_arrow_recipe", "resultItemId": "flaming_arrow", "resultQuantity": 5, "ingredients": [{ "itemId": "wooden_arrow", "quantity": 5 }, { "itemId": "torch", "quantity": 1 }], "stationId": "by_hand" },
+
+  { "id": "iron_chain_recipe", "resultItemId": "iron_chain", "resultQuantity": 10, "ingredients": [{ "itemId": "iron_bar", "quantity": 1 }], "stationId": "iron_anvil" },
+  { "id": "gold_chain_recipe", "resultItemId": "gold_chain", "resultQuantity": 10, "ingredients": [{ "itemId": "gold_bar", "quantity": 1 }], "stationId": "iron_anvil" },
+  { "id": "grappling_hook_recipe", "resultItemId": "grappling_hook", "resultQuantity": 1, "ingredients": [{ "itemId": "hook", "quantity": 1 }, { "itemId": "iron_chain", "quantity": 3 }], "stationId": "iron_anvil" },
+
+  { "id": "glowstick_recipe", "resultItemId": "glowstick", "resultQuantity": 5, "ingredients": [{ "itemId": "glass", "quantity": 2 }, { "itemId": "mushroom", "quantity": 1 }, { "itemId": "gel", "quantity": 2 }], "stationId": "by_hand" },
+
+  { "id": "lesser_healing_potion_recipe", "resultItemId": "lesser_healing_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "mushroom", "quantity": 1 }], "stationId": "alchemy_table" },
+  { "id": "healing_potion_recipe", "resultItemId": "healing_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "daybloom", "quantity": 1 }, { "itemId": "blinkroot", "quantity": 1 }, { "itemId": "lesser_healing_potion", "quantity": 2 }], "stationId": "alchemy_table" },
+  { "id": "ironskin_potion_recipe", "resultItemId": "ironskin_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "daybloom", "quantity": 1 }, { "itemId": "iron_ore", "quantity": 1 }], "stationId": "alchemy_table" },
+  { "id": "swiftness_potion_recipe", "resultItemId": "swiftness_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "daybloom", "quantity": 1 }, { "itemId": "blinkroot", "quantity": 1 }], "stationId": "alchemy_table" },
+  { "id": "regeneration_potion_recipe", "resultItemId": "regeneration_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "daybloom", "quantity": 1 }, { "itemId": "mushroom", "quantity": 1 }], "stationId": "alchemy_table" },
+  { "id": "night_owl_potion_recipe", "resultItemId": "night_owl_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "daybloom", "quantity": 1 }, { "itemId": "blinkroot", "quantity": 1 }], "stationId": "alchemy_table" },
+  { "id": "shine_potion_recipe", "resultItemId": "shine_potion", "resultQuantity": 1, "ingredients": [{ "itemId": "bottled_water", "quantity": 1 }, { "itemId": "daybloom", "quantity": 1 }, { "itemId": "moonglow", "quantity": 1 }], "stationId": "alchemy_table" },
+
+  { "id": "wooden_platform_recipe", "resultItemId": "wooden_platform", "resultQuantity": 2, "ingredients": [{ "itemId": "wood", "quantity": 1 }], "stationId": "work_bench" },
+  { "id": "wooden_chair_recipe", "resultItemId": "wooden_chair", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 4 }], "stationId": "work_bench" },
+  { "id": "wooden_table_recipe", "resultItemId": "wooden_table", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 8 }], "stationId": "work_bench" },
+  { "id": "wooden_door_recipe", "resultItemId": "wooden_door", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 6 }], "stationId": "work_bench" },
+  { "id": "bed_recipe", "resultItemId": "bed", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 15 }, { "itemId": "silk", "quantity": 5 }], "stationId": "sawmill" },
+  { "id": "chest_recipe", "resultItemId": "chest", "resultQuantity": 1, "ingredients": [{ "itemId": "wood", "quantity": 8 }, { "itemId": "iron_bar", "quantity": 2 }], "stationId": "work_bench" },
+
+  { "id": "copper_watch_recipe", "resultItemId": "watch_copper", "resultQuantity": 1, "ingredients": [{ "itemId": "copper_bar", "quantity": 10 }, { "itemId": "iron_chain", "quantity": 1 }], "stationId": "iron_anvil" },
+  { "id": "gold_watch_recipe", "resultItemId": "watch_gold", "resultQuantity": 1, "ingredients": [{ "itemId": "gold_bar", "quantity": 10 }, { "itemId": "gold_chain", "quantity": 1 }], "stationId": "iron_anvil" },
+
+  { "id": "obsidian_horseshoe_recipe", "resultItemId": "obsidian_horseshoe", "resultQuantity": 1, "ingredients": [{ "itemId": "obsidian_skull", "quantity": 1 }, { "itemId": "lucky_horseshoe", "quantity": 1 }], "stationId": "tinkerers_workshop" },
+  { "id": "specter_boots_recipe", "resultItemId": "specter_boots", "resultQuantity": 1, "ingredients": [{ "itemId": "rocket_boots", "quantity": 1 }, { "itemId": "aglet", "quantity": 1 }, { "itemId": "anklet_of_wind", "quantity": 1 }, { "itemId": "hermes_boots", "quantity": 1 }], "stationId": "tinkerers_workshop" }
+]
