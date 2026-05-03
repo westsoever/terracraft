@@ -9,5 +9,11 @@
   { "id": "keg", "name": "Keg", "sprite": "" },
   { "id": "cooking_pot", "name": "Cooking Pot", "sprite": "" },
   { "id": "tinkerers_workshop", "name": "Tinkerer's Workshop", "sprite": "" },
-  { "id": "mythril_anvil", "name": "Mythril Anvil", "sprite": "" }
+  { "id": "mythril_anvil", "name": "Mythril Anvil", "sprite": "" },
+  { "id": "hellforge", "name": "Hellforge", "sprite": "" },
+  { "id": "demon_altar", "name": "Demon Altar", "sprite": "" },
+  { "id": "heavy_work_bench", "name": "Heavy Work Bench", "sprite": "" },
+  { "id": "crystal_ball", "name": "Crystal Ball", "sprite": "" },
+  { "id": "glass_kiln", "name": "Glass Kiln", "sprite": "" },
+  { "id": "bookcase", "name": "Bookcase", "sprite": "" }
 ]
