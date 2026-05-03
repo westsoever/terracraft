@@ -2,37 +2,37 @@
   {
     "id": "adamantite_forge",
     "name": "Adamantite Forge",
-    "sprite": ""
+    "sprite": "/sprites/adamantite_forge.png"
   },
   {
     "id": "ancient_manipulator",
     "name": "Ancient Manipulator",
-    "sprite": ""
+    "sprite": "/sprites/ancient_manipulator.png"
   },
   {
     "id": "autohammer",
     "name": "Autohammer",
-    "sprite": ""
+    "sprite": "/sprites/autohammer.png"
   },
   {
     "id": "blend_o_matic",
     "name": "Blend-O-Matic",
-    "sprite": ""
+    "sprite": "/sprites/blend_o_matic.png"
   },
   {
     "id": "bone_welder",
     "name": "Bone Welder",
-    "sprite": ""
+    "sprite": "/sprites/bone_welder.png"
   },
   {
     "id": "bone_welder_and_ecto_mist",
     "name": "Bone Welder and Ecto Mist",
-    "sprite": ""
+    "sprite": "/sprites/bone_welder.png"
   },
   {
     "id": "bookcase",
     "name": "Bookcase",
-    "sprite": ""
+    "sprite": "/sprites/bookcase.png"
   },
   {
     "id": "by_hand",
@@ -42,42 +42,42 @@
   {
     "id": "campfire",
     "name": "Campfire",
-    "sprite": ""
+    "sprite": "/sprites/campfire.png"
   },
   {
     "id": "chlorophyte_extractinator",
     "name": "Chlorophyte Extractinator",
-    "sprite": ""
+    "sprite": "/sprites/chlorophyte_extractinator.png"
   },
   {
     "id": "cooking_pot",
     "name": "Cooking Pot",
-    "sprite": ""
+    "sprite": "/sprites/cooking_pot.png"
   },
   {
     "id": "crystal_ball",
     "name": "Crystal Ball",
-    "sprite": ""
+    "sprite": "/sprites/crystal_ball.png"
   },
   {
     "id": "crystal_ball_and_honey",
     "name": "Crystal Ball and Honey",
-    "sprite": ""
+    "sprite": "/sprites/crystal_ball.png"
   },
   {
     "id": "crystal_ball_and_lava",
     "name": "Crystal Ball and Lava",
-    "sprite": ""
+    "sprite": "/sprites/crystal_ball.png"
   },
   {
     "id": "crystal_ball_and_water",
     "name": "Crystal Ball and Water",
-    "sprite": ""
+    "sprite": "/sprites/crystal_ball.png"
   },
   {
     "id": "decay_chamber",
     "name": "Decay Chamber",
-    "sprite": ""
+    "sprite": "/sprites/decay_chamber.png"
   },
   {
     "id": "demon_altar",
@@ -87,117 +87,117 @@
   {
     "id": "dye_vat",
     "name": "Dye Vat",
-    "sprite": ""
+    "sprite": "/sprites/dye_vat.png"
   },
   {
     "id": "flesh_cloning_vat",
     "name": "Flesh Cloning Vat",
-    "sprite": ""
+    "sprite": "/sprites/flesh_cloning_vat.png"
   },
   {
     "id": "furnace",
     "name": "Furnace",
-    "sprite": ""
+    "sprite": "/sprites/furnace.png"
   },
   {
     "id": "glass_kiln",
     "name": "Glass Kiln",
-    "sprite": ""
+    "sprite": "/sprites/glass_kiln.png"
   },
   {
     "id": "heavy_assembler",
     "name": "Heavy Assembler",
-    "sprite": ""
+    "sprite": "/sprites/heavy_assembler.png"
   },
   {
     "id": "heavy_assembler_and_ecto_mist",
     "name": "Heavy Assembler and Ecto Mist",
-    "sprite": ""
+    "sprite": "/sprites/heavy_assembler.png"
   },
   {
     "id": "hellforge",
     "name": "Hellforge",
-    "sprite": ""
+    "sprite": "/sprites/hellforge.png"
   },
   {
     "id": "honey",
     "name": "Honey",
-    "sprite": ""
+    "sprite": "/sprites/honey_bucket.png"
   },
   {
     "id": "honey_dispenser",
     "name": "Honey Dispenser",
-    "sprite": ""
+    "sprite": "/sprites/honey_dispenser.png"
   },
   {
     "id": "ice_machine",
     "name": "Ice Machine",
-    "sprite": ""
+    "sprite": "/sprites/ice_machine.png"
   },
   {
     "id": "imbuing_station",
     "name": "Imbuing Station",
-    "sprite": ""
+    "sprite": "/sprites/imbuing_station.png"
   },
   {
     "id": "iron_anvil",
     "name": "Iron Anvil",
-    "sprite": ""
+    "sprite": "/sprites/iron_anvil.png"
   },
   {
     "id": "iron_anvil_and_ecto_mist",
     "name": "Iron Anvil and Ecto Mist",
-    "sprite": ""
+    "sprite": "/sprites/iron_anvil.png"
   },
   {
     "id": "keg",
     "name": "Keg",
-    "sprite": ""
+    "sprite": "/sprites/keg.png"
   },
   {
     "id": "lava",
     "name": "Lava",
-    "sprite": ""
+    "sprite": "/sprites/lava_bucket.png"
   },
   {
     "id": "lihzahrd_furnace",
     "name": "Lihzahrd Furnace",
-    "sprite": ""
+    "sprite": "/sprites/lihzahrd_furnace.png"
   },
   {
     "id": "living_loom",
     "name": "Living Loom",
-    "sprite": ""
+    "sprite": "/sprites/living_loom.png"
   },
   {
     "id": "loom",
     "name": "Loom",
-    "sprite": ""
+    "sprite": "/sprites/loom.png"
   },
   {
     "id": "loom_and_ecto_mist",
     "name": "Loom and Ecto Mist",
-    "sprite": ""
+    "sprite": "/sprites/loom.png"
   },
   {
     "id": "meat_grinder",
     "name": "Meat Grinder",
-    "sprite": ""
+    "sprite": "/sprites/meat_grinder.png"
   },
   {
     "id": "mythril_anvil",
     "name": "Mythril Anvil",
-    "sprite": ""
+    "sprite": "/sprites/mythril_anvil.png"
   },
   {
     "id": "placed_bottle",
     "name": "Placed Bottle",
-    "sprite": ""
+    "sprite": "/sprites/bottle.png"
   },
   {
     "id": "sawmill",
     "name": "Sawmill",
-    "sprite": ""
+    "sprite": "/sprites/sawmill.png"
   },
   {
     "id": "shimmer",
@@ -207,66 +207,66 @@
   {
     "id": "sky_mill",
     "name": "Sky Mill",
-    "sprite": ""
+    "sprite": "/sprites/sky_mill.png"
   },
   {
     "id": "sky_mill_and_lava",
     "name": "Sky Mill and Lava",
-    "sprite": ""
+    "sprite": "/sprites/sky_mill.png"
   },
   {
     "id": "sky_mill_and_snow_biome",
     "name": "Sky Mill and Snow Biome",
-    "sprite": ""
+    "sprite": "/sprites/sky_mill.png"
   },
   {
     "id": "sky_mill_and_water",
     "name": "Sky Mill and Water",
-    "sprite": ""
+    "sprite": "/sprites/sky_mill.png"
   },
   {
     "id": "solidifier",
     "name": "Solidifier",
-    "sprite": ""
+    "sprite": "/sprites/solidifier.png"
   },
   {
     "id": "steampunk_boiler",
     "name": "Steampunk Boiler",
-    "sprite": ""
+    "sprite": "/sprites/steampunk_boiler.png"
   },
   {
     "id": "teapot",
     "name": "Teapot",
-    "sprite": ""
+    "sprite": "/sprites/teapot.png"
   },
   {
     "id": "tinkerers_workshop",
     "name": "Tinkerer's Workshop",
-    "sprite": ""
+    "sprite": "/sprites/tinkerers_workshop.png"
   },
   {
     "id": "tinkerers_workshop_and_ecto_mist",
     "name": "Tinkerer's Workshop and Ecto Mist",
-    "sprite": ""
+    "sprite": "/sprites/tinkerers_workshop.png"
   },
   {
     "id": "water",
     "name": "Water",
-    "sprite": ""
+    "sprite": "/sprites/water_bucket.png"
   },
   {
     "id": "work_bench",
     "name": "Work Bench",
-    "sprite": ""
+    "sprite": "/sprites/work_bench.png"
   },
   {
     "id": "work_bench_and_ecto_mist",
     "name": "Work Bench and Ecto Mist",
-    "sprite": ""
+    "sprite": "/sprites/work_bench.png"
   },
   {
     "id": "work_bench_and_water",
     "name": "Work Bench and Water",
-    "sprite": ""
+    "sprite": "/sprites/work_bench.png"
   }
 ]

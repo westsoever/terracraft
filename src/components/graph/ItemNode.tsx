@@ -8,7 +8,7 @@ import { useAppStore } from '@/store/useAppStore';
 export type ItemNodeType = Node<ItemNodeData>;
 
 export const ItemNode = memo(function ItemNode({ data }: NodeProps<ItemNodeType>) {
-  const stationName = stationById.get(data.stationId)?.name ?? '';
+  const station = stationById.get(data.stationId);
   const have = useAppStore((s) => s.haveItems.has(data.item.id));
   const toggleHaveItem = useAppStore((s) => s.toggleHaveItem);
 
@@ -33,7 +33,14 @@ export const ItemNode = memo(function ItemNode({ data }: NodeProps<ItemNodeType>
 
       <div className="item-node-bottom">
         <span className="item-node-qty">×{data.quantityNeeded}</span>
-        {stationName && !data.isRaw && <span className="t-badge dim">{stationName}</span>}
+        {station && !data.isRaw && (
+          <div className="item-node-station">
+            {station.sprite && (
+              <img src={station.sprite} alt={station.name} className="item-node-station-img" />
+            )}
+            <span className="t-badge dim">{station.name}</span>
+          </div>
+        )}
         {data.isRaw && <span className="t-badge green">RAW</span>}
         {data.isCycleBreaker && <span className="t-badge red">CYCLE</span>}
         <label className="item-node-check" onClick={(e) => e.stopPropagation()}>
