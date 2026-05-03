@@ -1,279 +1,176 @@
 #!/usr/bin/env node
 /**
- * Download Terraria item sprites from terraria.fandom.com (main wiki).
- * Usage: node scripts/download-sprites.mjs
+ * Downloads sprites for all Terraria items from terraria.wiki.gg.
+ * Uses imagefile field from items-raw.json for exact wiki filenames.
+ * Skips sprites already present in public/sprites/.
+ *
+ * API: https://terraria.wiki.gg/api.php (MediaWiki imageinfo)
+ * Rate limit: 350ms between downloads + User-Agent header, 50 items per API batch
+ * 429 handling: exponential backoff up to 60s
  */
 
 import { readFile, writeFile, mkdir } from 'fs/promises';
+import { existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const ITEMS_JSON = join(ROOT, 'src', 'data', 'items.json');
+const ITEMS_RAW = join(__dirname, 'cache', 'items-raw.json');
 const SPRITES_DIR = join(ROOT, 'public', 'sprites');
-
-const PRIMARY_API = 'https://terraria.fandom.com/api.php';
-const FALLBACK_API = 'https://terraria.wiki.gg/api.php';
+const WIKI_API = 'https://terraria.wiki.gg/api.php';
 const BATCH_SIZE = 50;
-const DOWNLOAD_DELAY_MS = 150;
-const RETRY_DELAY_MS = 500;
+const DELAY_MS = 350;
+const RETRY_DELAY_MS = 2000;
+const USER_AGENT = 'TerracraftSpriteDownloader/1.0 (personal project; https://github.com/lyo/terracraft)';
 
-/** Hardcoded filename overrides for non-default filenames. */
-const FILENAME_OVERRIDES = {
-  wooden_platform: 'Wood_Platform.png',
-  gold_chain: 'Chain.png',
-};
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-/** Items that failed the primary wiki and should try fallback. */
-const FALLBACK_WIKI_ITEMS = new Set();
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+function toId(name) {
+  return name.toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 }
 
-/**
- * fetch with one retry on network error.
- */
 async function fetchWithRetry(url, options = {}) {
   try {
     return await fetch(url, options);
   } catch (err) {
-    console.warn(`  [retry] Network error for ${url}: ${err.message}`);
+    console.warn(`  [retry] ${err.message}`);
     await sleep(RETRY_DELAY_MS);
     return fetch(url, options);
   }
 }
 
-/**
- * Build the default wiki filename for an item name.
- * e.g. "Iron Ore" → "Iron_Ore.png"
- */
-function defaultFilename(name) {
-  return name.split(' ').join('_') + '.png';
-}
-
-/**
- * Build wiki API query URL for a list of File: titles.
- */
-function buildApiUrl(base, titles) {
-  const params = new URLSearchParams({
-    action: 'query',
-    titles: titles.join('|'),
-    prop: 'imageinfo',
-    iiprop: 'url|size',
-    format: 'json',
-  });
-  return `${base}?${params}`;
-}
-
-/**
- * Call the wiki API and return a map of filename → CDN URL.
- * Missing pages (negative IDs or missing: "") are excluded.
- */
-async function queryWikiApi(baseUrl, filenames) {
-  const titles = filenames.map((f) => `File:${f}`);
-  const url = buildApiUrl(baseUrl, titles);
-
-  const res = await fetchWithRetry(url);
-  if (!res.ok) {
-    throw new Error(`API ${baseUrl} returned ${res.status} for titles: ${filenames.join(', ')}`);
+async function fetchWithRateLimit(url) {
+  const options = { headers: { 'User-Agent': USER_AGENT } };
+  let backoff = 5000;
+  for (let attempt = 0; attempt < 8; attempt++) {
+    let res;
+    try {
+      res = await fetch(url, options);
+    } catch (err) {
+      console.warn(`  [net-err] ${err.message}, waiting ${backoff}ms`);
+      await sleep(backoff);
+      backoff = Math.min(backoff * 2, 60000);
+      continue;
+    }
+    if (res.status === 429) {
+      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10) * 1000 || backoff;
+      const wait = Math.max(retryAfter, backoff);
+      console.warn(`  [429] rate limited, waiting ${wait}ms`);
+      await sleep(wait);
+      backoff = Math.min(backoff * 2, 60000);
+      continue;
+    }
+    return res;
   }
+  throw new Error(`Too many retries for ${url}`);
+}
 
+async function resolveImageUrls(filenames) {
+  // filenames = array of plain filenames like "Iron Ore.png"
+  const titles = filenames.map(f => `File:${f}`).join('|');
+  const params = new URLSearchParams({
+    action: 'query', titles, prop: 'imageinfo',
+    iiprop: 'url', format: 'json'
+  });
+  const res = await fetchWithRetry(`${WIKI_API}?${params}`, {
+    headers: { 'User-Agent': USER_AGENT }
+  });
   const data = await res.json();
   const pages = data?.query?.pages ?? {};
-  const resolved = new Map(); // filename (without "File:") → CDN URL
-
+  const result = new Map(); // filename → CDN url
   for (const page of Object.values(pages)) {
-    // Missing pages have `missing: ""` property or negative numeric IDs
     if ('missing' in page) continue;
-    const title = page.title; // e.g. "File:Iron Ore.png" (API normalizes _ → space)
-    const filename = title.replace(/^File:/, '').replace(/ /g, '_');
-    const imageInfo = page.imageinfo?.[0];
-    if (imageInfo?.url) {
-      resolved.set(filename, imageInfo.url);
-    }
+    const filename = page.title.replace(/^File:/, '');
+    const url = page.imageinfo?.[0]?.url;
+    if (url) result.set(filename, url);
   }
-
-  return resolved;
+  return result;
 }
-
-/**
- * Format bytes as human-readable KB string.
- */
-function formatSize(bytes) {
-  return `${(bytes / 1024).toFixed(1)} KB`;
-}
-
-// ---------------------------------------------------------------------------
-// Main
-// ---------------------------------------------------------------------------
 
 async function main() {
-  // 1. Read items.json
-  const itemsRaw = await readFile(ITEMS_JSON, 'utf8');
-  const items = JSON.parse(itemsRaw);
+  await mkdir(SPRITES_DIR, { recursive: true });
 
-  // 2. Build filename map and separate fallback items
-  const primaryItems = []; // { item, filename }
-  const fallbackItems = []; // { item, candidateFilenames }
+  const rawItems = JSON.parse(await readFile(ITEMS_RAW, 'utf8'));
+  const items = JSON.parse(await readFile(ITEMS_JSON, 'utf8'));
 
-  for (const item of items) {
-    if (FALLBACK_WIKI_ITEMS.has(item.id)) {
-      const baseName = defaultFilename(item.name);
-      const itemName = item.name.split(' ').join('_');
-      fallbackItems.push({
-        item,
-        candidateFilenames: [`${itemName}_(item).png`, baseName],
-      });
-    } else {
-      const filename = FILENAME_OVERRIDES[item.id] ?? defaultFilename(item.name);
-      primaryItems.push({ item, filename });
-    }
+  // Build map: normalizedId → imagefile
+  const imagefileMap = new Map();
+  for (const raw of rawItems) {
+    if (!raw.itemid || !raw.imagefile || !raw.name) continue;
+    imagefileMap.set(toId(raw.name), raw.imagefile);
   }
 
-  // Map from itemId → CDN URL
-  const resolvedUrls = new Map();
+  // Determine which items need downloading
+  const toDownload = items.filter(item => {
+    const destPath = join(SPRITES_DIR, `${item.id}.png`);
+    return !existsSync(destPath) && imagefileMap.has(item.id);
+  });
 
-  // 3. Query primary wiki in batches of 50
-  console.log('Resolving sprites via API...');
+  console.log(`Items total: ${items.length}`);
+  console.log(`Already have sprites: ${items.length - toDownload.length}`);
+  console.log(`To download: ${toDownload.length}`);
+  console.log(`Estimated time: ~${Math.ceil(toDownload.length * DELAY_MS / 1000 / 60)} minutes`);
 
+  // Process in batches of BATCH_SIZE
+  const downloaded = [];
+  const failed = [];
   const batches = [];
-  for (let i = 0; i < primaryItems.length; i += BATCH_SIZE) {
-    batches.push(primaryItems.slice(i, i + BATCH_SIZE));
+  for (let i = 0; i < toDownload.length; i += BATCH_SIZE) {
+    batches.push(toDownload.slice(i, i + BATCH_SIZE));
   }
 
-  for (let batchIdx = 0; batchIdx < batches.length; batchIdx++) {
-    const batch = batches[batchIdx];
-    const filenames = batch.map((e) => e.filename);
+  for (let bi = 0; bi < batches.length; bi++) {
+    const batch = batches[bi];
+    const filenames = batch.map(item => imagefileMap.get(item.id)).filter(Boolean);
 
     let resolved;
     try {
-      resolved = await queryWikiApi(PRIMARY_API, filenames);
+      resolved = await resolveImageUrls(filenames);
     } catch (err) {
-      console.error(`  Batch ${batchIdx + 1}/${batches.length}: API error — ${err.message}`);
+      console.error(`  Batch ${bi + 1}/${batches.length}: API error — ${err.message}`);
       resolved = new Map();
     }
 
-    let resolvedCount = 0;
-    for (const { item, filename } of batch) {
-      if (resolved.has(filename)) {
-        resolvedUrls.set(item.id, resolved.get(filename));
-        resolvedCount++;
-      } else {
-        console.warn(`  [missing] ${item.id} (tried File:${filename})`);
+    for (const item of batch) {
+      const imagefile = imagefileMap.get(item.id);
+      const cdnUrl = resolved.get(imagefile);
+      if (!cdnUrl) {
+        failed.push(item.id);
+        continue;
+      }
+      const destPath = join(SPRITES_DIR, `${item.id}.png`);
+      try {
+        const res = await fetchWithRateLimit(cdnUrl);
+        if (!res.ok) {
+          console.warn(`  [fail] ${item.id}: HTTP ${res.status}`);
+          failed.push(item.id);
+          continue;
+        }
+        const buf = Buffer.from(await res.arrayBuffer());
+        await writeFile(destPath, buf);
+        downloaded.push(item.id);
+        await sleep(DELAY_MS);
+      } catch (err) {
+        console.warn(`  [err] ${item.id}: ${err.message}`);
+        failed.push(item.id);
       }
     }
-
-    console.log(
-      `  Batch ${batchIdx + 1}/${batches.length}: ${batch.length} items → ${resolvedCount} resolved, ${batch.length - resolvedCount} missing`
-    );
+    console.log(`Batch ${bi + 1}/${batches.length}: ${downloaded.length} downloaded total, ${failed.length} failed so far`);
   }
 
-  // 4. Fallback wiki for special items
-  if (fallbackItems.length > 0) {
-    const fallbackNames = fallbackItems.map((e) => e.item.id).join(', ');
-    console.log(`Trying fallback wiki for: ${fallbackNames}`);
-
-    for (const { item, candidateFilenames } of fallbackItems) {
-      let foundUrl = null;
-      let foundFilename = null;
-
-      for (const candidate of candidateFilenames) {
-        let resolved;
-        try {
-          resolved = await queryWikiApi(FALLBACK_API, [candidate]);
-        } catch (err) {
-          console.error(`  [fallback] API error for ${item.id}/${candidate}: ${err.message}`);
-          resolved = new Map();
-        }
-
-        if (resolved.has(candidate)) {
-          foundUrl = resolved.get(candidate);
-          foundFilename = candidate;
-          break;
-        }
-      }
-
-      if (foundUrl) {
-        resolvedUrls.set(item.id, foundUrl);
-        console.log(`  ${item.id} → resolved via ${foundFilename}`);
-      } else {
-        console.warn(`  ${item.id} → not found on fallback wiki (tried: ${candidateFilenames.join(', ')})`);
-      }
-    }
-  }
-
-  // 5. Create sprites directory
-  await mkdir(SPRITES_DIR, { recursive: true });
-
-  // 6. Download sprites
-  console.log('Downloading sprites...');
-
-  let downloadedCount = 0;
-  const failedItems = [];
-
+  // Update items.json with sprite paths
   for (const item of items) {
-    const url = resolvedUrls.get(item.id);
-    if (!url) {
-      // Already warned above
-      failedItems.push(item.id);
-      continue;
-    }
-
     const destPath = join(SPRITES_DIR, `${item.id}.png`);
-
-    try {
-      const res = await fetchWithRetry(url);
-      if (!res.ok) {
-        console.log(`  ✗ ${item.id} — CDN returned ${res.status} (${url})`);
-        failedItems.push(item.id);
-      } else {
-        const buffer = Buffer.from(await res.arrayBuffer());
-        await writeFile(destPath, buffer);
-        console.log(`  ✓ ${item.id} (${formatSize(buffer.length)})`);
-        downloadedCount++;
-      }
-    } catch (err) {
-      console.log(`  ✗ ${item.id} — download error: ${err.message}`);
-      failedItems.push(item.id);
-    }
-
-    // Rate limiting
-    await sleep(DOWNLOAD_DELAY_MS);
+    item.sprite = existsSync(destPath) ? `/sprites/${item.id}.png` : '';
   }
-
-  // 7. Update items.json
-  for (const item of items) {
-    const destPath = `/sprites/${item.id}.png`;
-    // Only set sprite if we successfully downloaded it
-    if (resolvedUrls.has(item.id) && !failedItems.includes(item.id)) {
-      item.sprite = destPath;
-    } else {
-      item.sprite = '';
-    }
-  }
-
   await writeFile(ITEMS_JSON, JSON.stringify(items, null, 2) + '\n');
 
-  // 8. Summary
-  const totalItems = items.length;
   console.log('\nSummary:');
-  console.log(`  Downloaded: ${downloadedCount}/${totalItems}`);
-  if (failedItems.length > 0) {
-    console.log(`  Failed/missing: ${failedItems.length}`);
-    console.log(`    ${failedItems.join(', ')}`);
-  } else {
-    console.log('  Failed/missing: 0');
-  }
-  console.log(`  Updated ${ITEMS_JSON}`);
+  console.log(`  Downloaded: ${downloaded.length}`);
+  console.log(`  Failed/missing: ${failed.length}`);
+  console.log(`  Sprite coverage: ${items.filter(i => i.sprite).length}/${items.length}`);
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+main().catch(err => { console.error(err); process.exit(1); });

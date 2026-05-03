@@ -1,19 +1,272 @@
 [
-  { "id": "by_hand", "name": "By Hand", "sprite": "" },
-  { "id": "work_bench", "name": "Work Bench", "sprite": "" },
-  { "id": "furnace", "name": "Furnace", "sprite": "" },
-  { "id": "iron_anvil", "name": "Iron Anvil", "sprite": "" },
-  { "id": "alchemy_table", "name": "Alchemy Table", "sprite": "" },
-  { "id": "loom", "name": "Loom", "sprite": "" },
-  { "id": "sawmill", "name": "Sawmill", "sprite": "" },
-  { "id": "keg", "name": "Keg", "sprite": "" },
-  { "id": "cooking_pot", "name": "Cooking Pot", "sprite": "" },
-  { "id": "tinkerers_workshop", "name": "Tinkerer's Workshop", "sprite": "" },
-  { "id": "mythril_anvil", "name": "Mythril Anvil", "sprite": "" },
-  { "id": "hellforge", "name": "Hellforge", "sprite": "" },
-  { "id": "demon_altar", "name": "Demon Altar", "sprite": "" },
-  { "id": "heavy_work_bench", "name": "Heavy Work Bench", "sprite": "" },
-  { "id": "crystal_ball", "name": "Crystal Ball", "sprite": "" },
-  { "id": "glass_kiln", "name": "Glass Kiln", "sprite": "" },
-  { "id": "bookcase", "name": "Bookcase", "sprite": "" }
+  {
+    "id": "adamantite_forge",
+    "name": "Adamantite Forge",
+    "sprite": ""
+  },
+  {
+    "id": "ancient_manipulator",
+    "name": "Ancient Manipulator",
+    "sprite": ""
+  },
+  {
+    "id": "autohammer",
+    "name": "Autohammer",
+    "sprite": ""
+  },
+  {
+    "id": "blend_o_matic",
+    "name": "Blend-O-Matic",
+    "sprite": ""
+  },
+  {
+    "id": "bone_welder",
+    "name": "Bone Welder",
+    "sprite": ""
+  },
+  {
+    "id": "bone_welder_and_ecto_mist",
+    "name": "Bone Welder and Ecto Mist",
+    "sprite": ""
+  },
+  {
+    "id": "bookcase",
+    "name": "Bookcase",
+    "sprite": ""
+  },
+  {
+    "id": "by_hand",
+    "name": "By Hand",
+    "sprite": ""
+  },
+  {
+    "id": "campfire",
+    "name": "Campfire",
+    "sprite": ""
+  },
+  {
+    "id": "chlorophyte_extractinator",
+    "name": "Chlorophyte Extractinator",
+    "sprite": ""
+  },
+  {
+    "id": "cooking_pot",
+    "name": "Cooking Pot",
+    "sprite": ""
+  },
+  {
+    "id": "crystal_ball",
+    "name": "Crystal Ball",
+    "sprite": ""
+  },
+  {
+    "id": "crystal_ball_and_honey",
+    "name": "Crystal Ball and Honey",
+    "sprite": ""
+  },
+  {
+    "id": "crystal_ball_and_lava",
+    "name": "Crystal Ball and Lava",
+    "sprite": ""
+  },
+  {
+    "id": "crystal_ball_and_water",
+    "name": "Crystal Ball and Water",
+    "sprite": ""
+  },
+  {
+    "id": "decay_chamber",
+    "name": "Decay Chamber",
+    "sprite": ""
+  },
+  {
+    "id": "demon_altar",
+    "name": "Demon Altar",
+    "sprite": ""
+  },
+  {
+    "id": "dye_vat",
+    "name": "Dye Vat",
+    "sprite": ""
+  },
+  {
+    "id": "flesh_cloning_vat",
+    "name": "Flesh Cloning Vat",
+    "sprite": ""
+  },
+  {
+    "id": "furnace",
+    "name": "Furnace",
+    "sprite": ""
+  },
+  {
+    "id": "glass_kiln",
+    "name": "Glass Kiln",
+    "sprite": ""
+  },
+  {
+    "id": "heavy_assembler",
+    "name": "Heavy Assembler",
+    "sprite": ""
+  },
+  {
+    "id": "heavy_assembler_and_ecto_mist",
+    "name": "Heavy Assembler and Ecto Mist",
+    "sprite": ""
+  },
+  {
+    "id": "hellforge",
+    "name": "Hellforge",
+    "sprite": ""
+  },
+  {
+    "id": "honey",
+    "name": "Honey",
+    "sprite": ""
+  },
+  {
+    "id": "honey_dispenser",
+    "name": "Honey Dispenser",
+    "sprite": ""
+  },
+  {
+    "id": "ice_machine",
+    "name": "Ice Machine",
+    "sprite": ""
+  },
+  {
+    "id": "imbuing_station",
+    "name": "Imbuing Station",
+    "sprite": ""
+  },
+  {
+    "id": "iron_anvil",
+    "name": "Iron Anvil",
+    "sprite": ""
+  },
+  {
+    "id": "iron_anvil_and_ecto_mist",
+    "name": "Iron Anvil and Ecto Mist",
+    "sprite": ""
+  },
+  {
+    "id": "keg",
+    "name": "Keg",
+    "sprite": ""
+  },
+  {
+    "id": "lava",
+    "name": "Lava",
+    "sprite": ""
+  },
+  {
+    "id": "lihzahrd_furnace",
+    "name": "Lihzahrd Furnace",
+    "sprite": ""
+  },
+  {
+    "id": "living_loom",
+    "name": "Living Loom",
+    "sprite": ""
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "sprite": ""
+  },
+  {
+    "id": "loom_and_ecto_mist",
+    "name": "Loom and Ecto Mist",
+    "sprite": ""
+  },
+  {
+    "id": "meat_grinder",
+    "name": "Meat Grinder",
+    "sprite": ""
+  },
+  {
+    "id": "mythril_anvil",
+    "name": "Mythril Anvil",
+    "sprite": ""
+  },
+  {
+    "id": "placed_bottle",
+    "name": "Placed Bottle",
+    "sprite": ""
+  },
+  {
+    "id": "sawmill",
+    "name": "Sawmill",
+    "sprite": ""
+  },
+  {
+    "id": "shimmer",
+    "name": "Shimmer",
+    "sprite": ""
+  },
+  {
+    "id": "sky_mill",
+    "name": "Sky Mill",
+    "sprite": ""
+  },
+  {
+    "id": "sky_mill_and_lava",
+    "name": "Sky Mill and Lava",
+    "sprite": ""
+  },
+  {
+    "id": "sky_mill_and_snow_biome",
+    "name": "Sky Mill and Snow Biome",
+    "sprite": ""
+  },
+  {
+    "id": "sky_mill_and_water",
+    "name": "Sky Mill and Water",
+    "sprite": ""
+  },
+  {
+    "id": "solidifier",
+    "name": "Solidifier",
+    "sprite": ""
+  },
+  {
+    "id": "steampunk_boiler",
+    "name": "Steampunk Boiler",
+    "sprite": ""
+  },
+  {
+    "id": "teapot",
+    "name": "Teapot",
+    "sprite": ""
+  },
+  {
+    "id": "tinkerers_workshop",
+    "name": "Tinkerer's Workshop",
+    "sprite": ""
+  },
+  {
+    "id": "tinkerers_workshop_and_ecto_mist",
+    "name": "Tinkerer's Workshop and Ecto Mist",
+    "sprite": ""
+  },
+  {
+    "id": "water",
+    "name": "Water",
+    "sprite": ""
+  },
+  {
+    "id": "work_bench",
+    "name": "Work Bench",
+    "sprite": ""
+  },
+  {
+    "id": "work_bench_and_ecto_mist",
+    "name": "Work Bench and Ecto Mist",
+    "sprite": ""
+  },
+  {
+    "id": "work_bench_and_water",
+    "name": "Work Bench and Water",
+    "sprite": ""
+  }
 ]
