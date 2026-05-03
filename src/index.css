@@ -1,23 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@font-face {
+  font-family: 'Terraria';
+  src: url('/fonts/Terraria.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ── Terraria palette ─────────────────────────────────────────── */
 :root {
-  --bg-deep:       #0d0d1a;
-  --bg-panel:      #1a1a2e;
-  --bg-slot:       #131325;
-  --bg-slot-hover: #1e1e3a;
-  --border-gold:   #c8a84b;
-  --border-dark:   #2a2a4c;
-  --border-inner:  #0a0a18;
-  --text-primary:  #e8d8a0;
-  --text-dim:      #7070a0;
-  --text-bright:   #fff8dc;
-  --accent-blue:   #4488cc;
-  --accent-red:    #cc4444;
-  --accent-green:  #44aa66;
-  --accent-gold:   #f0c060;
-  --scrollbar-bg:  #0d0d1a;
-  --scrollbar-thumb: #2a2a4c;
+  --bg-deep:       #FAF9F6;
+  --bg-panel:      #F0EDE5;
+  --bg-slot:       #E6E0D4;
+  --bg-slot-hover: #DAD4C6;
+  --border-gold:   #C8A84B;
+  --border-dark:   #C8BFA8;
+  --border-inner:  #B4A990;
+  --text-primary:  #362C18;
+  --text-dim:      #8C806A;
+  --text-bright:   #1A1408;
+  --accent-blue:   #5B9BD5;
+  --accent-red:    #CC4444;
+  --accent-green:  #3A9958;
+  --accent-gold:   #9A7010;
+  --scrollbar-bg:  #E8E3D8;
+  --scrollbar-thumb: #CBC3AD;
 }
 
 /* ── Reset ────────────────────────────────────────────────────── */
@@ -31,7 +37,7 @@ html, body, #root {
 body {
   background: var(--bg-deep);
   color: var(--text-primary);
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Terraria', monospace;
   font-size: 10px;
   line-height: 1.6;
   -webkit-font-smoothing: none;
@@ -48,8 +54,8 @@ body {
 .t-panel {
   background: var(--bg-panel);
   border: 2px solid var(--border-gold);
-  box-shadow: inset 0 0 0 2px var(--border-inner), 0 0 12px rgba(200,168,75,0.15);
-  border-radius: 0;
+  box-shadow: inset 0 0 0 2px var(--border-inner), 0 0 12px rgba(200,168,75,0.25);
+  border-radius: 10px;
 }
 
 /* ── Terraria slot (item box) ─────────────────────────────────── */
@@ -62,7 +68,7 @@ body {
   background: var(--bg-slot);
   border: 2px solid var(--border-dark);
   box-shadow: inset 0 0 0 1px var(--border-inner);
-  border-radius: 0;
+  border-radius: 10px;
   position: relative;
   flex-shrink: 0;
 }
@@ -77,9 +83,9 @@ body {
 .t-slot-placeholder {
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, #2a2a4a 25%, #1a1a30 25%, #1a1a30 50%, #2a2a4a 50%, #2a2a4a 75%, #1a1a30 75%);
+  background: linear-gradient(135deg, #C8BFA8 25%, #D8D0BC 25%, #D8D0BC 50%, #C8BFA8 50%, #C8BFA8 75%, #D8D0BC 75%);
   background-size: 8px 8px;
-  border-radius: 0;
+  border-radius: 10px;
   opacity: 0.6;
 }
 
@@ -88,29 +94,29 @@ body {
   background: var(--bg-slot);
   border: 2px solid var(--border-gold);
   color: var(--text-primary);
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Terraria', monospace;
   font-size: 8px;
   padding: 6px 10px;
   cursor: pointer;
   box-shadow: inset 0 0 0 1px var(--border-inner);
   transition: background 0.1s, color 0.1s;
-  border-radius: 0;
+  border-radius: 10px;
 }
-.t-btn:hover { background: #2a2a4c; color: var(--accent-gold); }
-.t-btn:active { background: #101020; }
-.t-btn.active { background: #2a3a5c; border-color: var(--accent-blue); color: #88bbee; }
+.t-btn:hover { background: #D8D0C0; color: var(--accent-gold); }
+.t-btn:active { background: #C8C0B0; }
+.t-btn.active { background: #C8DCF0; border-color: var(--accent-blue); color: #2A5C8A; }
 
 /* ── Input ────────────────────────────────────────────────────── */
 .t-input {
   background: var(--bg-slot);
   border: 2px solid var(--border-dark);
   color: var(--text-primary);
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Terraria', monospace;
   font-size: 9px;
   padding: 6px 8px;
   outline: none;
   width: 100%;
-  border-radius: 0;
+  border-radius: 10px;
 }
 .t-input:focus { border-color: var(--border-gold); box-shadow: 0 0 6px rgba(200,168,75,0.3); }
 .t-input::placeholder { color: var(--text-dim); }
@@ -120,12 +126,12 @@ body {
   background: var(--bg-slot);
   border: 2px solid var(--border-dark);
   color: var(--text-primary);
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Terraria', monospace;
   font-size: 8px;
   padding: 5px 6px;
   outline: none;
   cursor: pointer;
-  border-radius: 0;
+  border-radius: 10px;
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -137,15 +143,15 @@ body {
 .t-badge {
   font-size: 7px;
   padding: 2px 5px;
-  border-radius: 0;
+  border-radius: 10px;
   border: 1px solid currentColor;
   white-space: nowrap;
   line-height: 1.4;
 }
-.t-badge.gold  { color: var(--accent-gold);  border-color: var(--accent-gold);  background: rgba(240,192,96,0.1); }
-.t-badge.blue  { color: var(--accent-blue);  border-color: var(--accent-blue);  background: rgba(68,136,204,0.1); }
-.t-badge.red   { color: var(--accent-red);   border-color: var(--accent-red);   background: rgba(204,68,68,0.12); }
-.t-badge.green { color: var(--accent-green); border-color: var(--accent-green); background: rgba(68,170,102,0.1); }
+.t-badge.gold  { color: var(--accent-gold);  border-color: var(--accent-gold);  background: rgba(200,168,75,0.12); }
+.t-badge.blue  { color: var(--accent-blue);  border-color: var(--accent-blue);  background: rgba(91,155,213,0.12); }
+.t-badge.red   { color: var(--accent-red);   border-color: var(--accent-red);   background: rgba(204,68,68,0.10); }
+.t-badge.green { color: var(--accent-green); border-color: var(--accent-green); background: rgba(58,153,88,0.10); }
 .t-badge.dim   { color: var(--text-dim);     border-color: var(--border-dark); }
 
 /* ── Quantity chip ───────────────────────────────────────────── */
@@ -155,7 +161,7 @@ body {
   right: 2px;
   font-size: 7px;
   color: #fff;
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  text-shadow: 1px 1px 0 #7A6A50, -1px -1px 0 #7A6A50, 1px -1px 0 #7A6A50, -1px 1px 0 #7A6A50;
   line-height: 1;
   pointer-events: none;
 }
@@ -191,7 +197,7 @@ body {
   color: var(--accent-gold);
   letter-spacing: 0.05em;
   margin-bottom: 10px;
-  text-shadow: 0 0 8px rgba(240,192,96,0.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
 }
 
 .sidebar-results {
@@ -217,7 +223,7 @@ body {
   transition: background 0.08s;
 }
 .item-card:hover { background: var(--bg-slot-hover); border-left-color: var(--border-dark); }
-.item-card.selected { background: #1a2a3c; border-left-color: var(--accent-blue); }
+.item-card.selected { background: #C8DCF0; border-left-color: var(--accent-blue); }
 
 .item-card-info { flex: 1; min-width: 0; }
 .item-card-name {
@@ -252,7 +258,7 @@ body {
 .main-panel-item-name {
   font-size: 11px;
   color: var(--accent-gold);
-  text-shadow: 0 0 8px rgba(240,192,96,0.4);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
   flex: 1;
   min-width: 0;
   white-space: nowrap;
@@ -325,8 +331,8 @@ body {
   width: 200px;
   background: var(--bg-panel);
   border: 2px solid var(--border-gold);
-  box-shadow: inset 0 0 0 1px var(--border-inner), 0 2px 8px rgba(0,0,0,0.6);
-  border-radius: 0;
+  box-shadow: inset 0 0 0 1px var(--border-inner), 0 2px 8px rgba(0,0,0,0.12);
+  border-radius: 10px;
   padding: 8px;
   display: flex;
   flex-direction: column;
