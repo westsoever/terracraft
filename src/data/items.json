@@ -1,100 +1,1740 @@
 [
-  { "id": "wood", "name": "Wood", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "stone_block", "name": "Stone Block", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "iron_ore", "name": "Iron Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "gold_ore", "name": "Gold Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "silver_ore", "name": "Silver Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "copper_ore", "name": "Copper Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "tin_ore", "name": "Tin Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "lead_ore", "name": "Lead Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "tungsten_ore", "name": "Tungsten Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "platinum_ore", "name": "Platinum Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "cobalt_ore", "name": "Cobalt Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "mythril_ore", "name": "Mythril Ore", "sprite": "", "tags": ["raw", "ore"] },
-  { "id": "gel", "name": "Gel", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "sand_block", "name": "Sand Block", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "glass", "name": "Glass", "sprite": "", "tags": ["material"] },
-  { "id": "torch", "name": "Torch", "sprite": "", "tags": ["light"] },
-  { "id": "rope", "name": "Rope", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "silk", "name": "Silk", "sprite": "", "tags": ["material"] },
-  { "id": "cobweb", "name": "Cobweb", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "mushroom", "name": "Mushroom", "sprite": "", "tags": ["raw", "material"] },
-  { "id": "daybloom", "name": "Daybloom", "sprite": "", "tags": ["raw", "herb"] },
-  { "id": "blinkroot", "name": "Blinkroot", "sprite": "", "tags": ["raw", "herb"] },
-  { "id": "deathweed", "name": "Deathweed", "sprite": "", "tags": ["raw", "herb"] },
-  { "id": "waterleaf", "name": "Waterleaf", "sprite": "", "tags": ["raw", "herb"] },
-  { "id": "fireblossom", "name": "Fireblossom", "sprite": "", "tags": ["raw", "herb"] },
-  { "id": "moonglow", "name": "Moonglow", "sprite": "", "tags": ["raw", "herb"] },
-  { "id": "bottled_water", "name": "Bottled Water", "sprite": "", "tags": ["raw", "potion"] },
-  { "id": "iron_bar", "name": "Iron Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "gold_bar", "name": "Gold Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "silver_bar", "name": "Silver Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "copper_bar", "name": "Copper Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "tin_bar", "name": "Tin Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "lead_bar", "name": "Lead Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "tungsten_bar", "name": "Tungsten Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "platinum_bar", "name": "Platinum Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "cobalt_bar", "name": "Cobalt Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "mythril_bar", "name": "Mythril Bar", "sprite": "", "tags": ["material", "metal"] },
-  { "id": "work_bench", "name": "Work Bench", "sprite": "", "tags": ["station", "furniture"] },
-  { "id": "furnace", "name": "Furnace", "sprite": "", "tags": ["station"] },
-  { "id": "iron_anvil", "name": "Iron Anvil", "sprite": "", "tags": ["station"] },
-  { "id": "sawmill", "name": "Sawmill", "sprite": "", "tags": ["station", "furniture"] },
-  { "id": "loom", "name": "Loom", "sprite": "", "tags": ["station", "furniture"] },
-  { "id": "wooden_sword", "name": "Wooden Sword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "wooden_bow", "name": "Wooden Bow", "sprite": "", "tags": ["weapon", "ranged"] },
-  { "id": "copper_sword", "name": "Copper Shortsword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "copper_broadsword", "name": "Copper Broadsword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "iron_sword", "name": "Iron Shortsword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "iron_broadsword", "name": "Iron Broadsword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "gold_sword", "name": "Gold Shortsword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "gold_broadsword", "name": "Gold Broadsword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "copper_helmet", "name": "Copper Helmet", "sprite": "", "tags": ["armor", "head"] },
-  { "id": "copper_chainmail", "name": "Copper Chainmail", "sprite": "", "tags": ["armor", "body"] },
-  { "id": "copper_greaves", "name": "Copper Greaves", "sprite": "", "tags": ["armor", "legs"] },
-  { "id": "iron_helmet", "name": "Iron Helmet", "sprite": "", "tags": ["armor", "head"] },
-  { "id": "iron_chainmail", "name": "Iron Chainmail", "sprite": "", "tags": ["armor", "body"] },
-  { "id": "iron_greaves", "name": "Iron Greaves", "sprite": "", "tags": ["armor", "legs"] },
-  { "id": "gold_helmet", "name": "Gold Helmet", "sprite": "", "tags": ["armor", "head"] },
-  { "id": "gold_chainmail", "name": "Gold Chainmail", "sprite": "", "tags": ["armor", "body"] },
-  { "id": "gold_greaves", "name": "Gold Greaves", "sprite": "", "tags": ["armor", "legs"] },
-  { "id": "wooden_arrow", "name": "Wooden Arrow", "sprite": "", "tags": ["ammo"] },
-  { "id": "flaming_arrow", "name": "Flaming Arrow", "sprite": "", "tags": ["ammo"] },
-  { "id": "iron_chain", "name": "Iron Chain", "sprite": "", "tags": ["material"] },
-  { "id": "hook", "name": "Hook", "sprite": "", "tags": ["material", "raw"] },
-  { "id": "grappling_hook", "name": "Grappling Hook", "sprite": "", "tags": ["accessory"] },
-  { "id": "shuriken", "name": "Shuriken", "sprite": "", "tags": ["weapon", "ranged"] },
-  { "id": "glowstick", "name": "Glowstick", "sprite": "", "tags": ["light"] },
-  { "id": "lesser_healing_potion", "name": "Lesser Healing Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "healing_potion", "name": "Healing Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "ironskin_potion", "name": "Ironskin Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "swiftness_potion", "name": "Swiftness Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "regeneration_potion", "name": "Regeneration Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "night_owl_potion", "name": "Night Owl Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "shine_potion", "name": "Shine Potion", "sprite": "", "tags": ["potion", "consumable"] },
-  { "id": "wooden_platform", "name": "Wooden Platform", "sprite": "", "tags": ["block", "furniture"] },
-  { "id": "wooden_chair", "name": "Wooden Chair", "sprite": "", "tags": ["furniture"] },
-  { "id": "wooden_table", "name": "Wooden Table", "sprite": "", "tags": ["furniture"] },
-  { "id": "wooden_door", "name": "Wooden Door", "sprite": "", "tags": ["furniture"] },
-  { "id": "bed", "name": "Bed", "sprite": "", "tags": ["furniture"] },
-  { "id": "chest", "name": "Chest", "sprite": "", "tags": ["furniture", "storage"] },
-  { "id": "copper_coin", "name": "Copper Coin", "sprite": "", "tags": ["raw", "currency"] },
-  { "id": "gold_coin", "name": "Gold Coin", "sprite": "", "tags": ["raw", "currency"] },
-  { "id": "watch_copper", "name": "Copper Watch", "sprite": "", "tags": ["accessory", "info"] },
-  { "id": "watch_gold", "name": "Gold Watch", "sprite": "", "tags": ["accessory", "info"] },
-  { "id": "gold_chain", "name": "Gold Chain", "sprite": "", "tags": ["material"] },
-  { "id": "cobalt_shield", "name": "Cobalt Shield", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "obsidian_skull", "name": "Obsidian Skull", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "obsidian_horseshoe", "name": "Obsidian Horseshoe", "sprite": "", "tags": ["accessory"] },
-  { "id": "lucky_horseshoe", "name": "Lucky Horseshoe", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "aglet", "name": "Aglet", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "anklet_of_wind", "name": "Anklet of the Wind", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "specter_boots", "name": "Spectre Boots", "sprite": "", "tags": ["accessory"] },
-  { "id": "hermes_boots", "name": "Hermes Boots", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "flurry_boots", "name": "Flurry Boots", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "rocket_boots", "name": "Rocket Boots", "sprite": "", "tags": ["accessory", "raw"] },
-  { "id": "mythril_sword", "name": "Mythril Sword", "sprite": "", "tags": ["weapon", "melee"] },
-  { "id": "mythril_helmet", "name": "Mythril Helmet", "sprite": "", "tags": ["armor", "head"] },
-  { "id": "mythril_chainmail", "name": "Mythril Chainmail", "sprite": "", "tags": ["armor", "body"] },
-  { "id": "mythril_greaves", "name": "Mythril Greaves", "sprite": "", "tags": ["armor", "legs"] }
+  {
+    "id": "wood",
+    "name": "Wood",
+    "sprite": "/sprites/wood.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "stone_block",
+    "name": "Stone Block",
+    "sprite": "/sprites/stone_block.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "iron_ore",
+    "name": "Iron Ore",
+    "sprite": "/sprites/iron_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "gold_ore",
+    "name": "Gold Ore",
+    "sprite": "/sprites/gold_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "silver_ore",
+    "name": "Silver Ore",
+    "sprite": "/sprites/silver_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "copper_ore",
+    "name": "Copper Ore",
+    "sprite": "/sprites/copper_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "tin_ore",
+    "name": "Tin Ore",
+    "sprite": "/sprites/tin_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "lead_ore",
+    "name": "Lead Ore",
+    "sprite": "/sprites/lead_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "tungsten_ore",
+    "name": "Tungsten Ore",
+    "sprite": "/sprites/tungsten_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "platinum_ore",
+    "name": "Platinum Ore",
+    "sprite": "/sprites/platinum_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "cobalt_ore",
+    "name": "Cobalt Ore",
+    "sprite": "/sprites/cobalt_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "mythril_ore",
+    "name": "Mythril Ore",
+    "sprite": "/sprites/mythril_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "gel",
+    "name": "Gel",
+    "sprite": "/sprites/gel.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "sand_block",
+    "name": "Sand Block",
+    "sprite": "/sprites/sand_block.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "glass",
+    "name": "Glass",
+    "sprite": "/sprites/glass.png",
+    "tags": [
+      "material"
+    ]
+  },
+  {
+    "id": "torch",
+    "name": "Torch",
+    "sprite": "/sprites/torch.png",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "rope",
+    "name": "Rope",
+    "sprite": "/sprites/rope.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "silk",
+    "name": "Silk",
+    "sprite": "/sprites/silk.png",
+    "tags": [
+      "material"
+    ]
+  },
+  {
+    "id": "cobweb",
+    "name": "Cobweb",
+    "sprite": "/sprites/cobweb.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "mushroom",
+    "name": "Mushroom",
+    "sprite": "/sprites/mushroom.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "daybloom",
+    "name": "Daybloom",
+    "sprite": "/sprites/daybloom.png",
+    "tags": [
+      "raw",
+      "herb"
+    ]
+  },
+  {
+    "id": "blinkroot",
+    "name": "Blinkroot",
+    "sprite": "/sprites/blinkroot.png",
+    "tags": [
+      "raw",
+      "herb"
+    ]
+  },
+  {
+    "id": "deathweed",
+    "name": "Deathweed",
+    "sprite": "/sprites/deathweed.png",
+    "tags": [
+      "raw",
+      "herb"
+    ]
+  },
+  {
+    "id": "waterleaf",
+    "name": "Waterleaf",
+    "sprite": "/sprites/waterleaf.png",
+    "tags": [
+      "raw",
+      "herb"
+    ]
+  },
+  {
+    "id": "fireblossom",
+    "name": "Fireblossom",
+    "sprite": "/sprites/fireblossom.png",
+    "tags": [
+      "raw",
+      "herb"
+    ]
+  },
+  {
+    "id": "moonglow",
+    "name": "Moonglow",
+    "sprite": "/sprites/moonglow.png",
+    "tags": [
+      "raw",
+      "herb"
+    ]
+  },
+  {
+    "id": "bottled_water",
+    "name": "Bottled Water",
+    "sprite": "/sprites/bottled_water.png",
+    "tags": [
+      "raw",
+      "potion"
+    ]
+  },
+  {
+    "id": "iron_bar",
+    "name": "Iron Bar",
+    "sprite": "/sprites/iron_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "gold_bar",
+    "name": "Gold Bar",
+    "sprite": "/sprites/gold_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "silver_bar",
+    "name": "Silver Bar",
+    "sprite": "/sprites/silver_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "copper_bar",
+    "name": "Copper Bar",
+    "sprite": "/sprites/copper_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "tin_bar",
+    "name": "Tin Bar",
+    "sprite": "/sprites/tin_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "lead_bar",
+    "name": "Lead Bar",
+    "sprite": "/sprites/lead_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "tungsten_bar",
+    "name": "Tungsten Bar",
+    "sprite": "/sprites/tungsten_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "platinum_bar",
+    "name": "Platinum Bar",
+    "sprite": "/sprites/platinum_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "cobalt_bar",
+    "name": "Cobalt Bar",
+    "sprite": "/sprites/cobalt_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "mythril_bar",
+    "name": "Mythril Bar",
+    "sprite": "/sprites/mythril_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "work_bench",
+    "name": "Work Bench",
+    "sprite": "/sprites/work_bench.png",
+    "tags": [
+      "station",
+      "furniture"
+    ]
+  },
+  {
+    "id": "furnace",
+    "name": "Furnace",
+    "sprite": "/sprites/furnace.png",
+    "tags": [
+      "station"
+    ]
+  },
+  {
+    "id": "iron_anvil",
+    "name": "Iron Anvil",
+    "sprite": "/sprites/iron_anvil.png",
+    "tags": [
+      "station"
+    ]
+  },
+  {
+    "id": "sawmill",
+    "name": "Sawmill",
+    "sprite": "/sprites/sawmill.png",
+    "tags": [
+      "station",
+      "furniture"
+    ]
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "sprite": "/sprites/loom.png",
+    "tags": [
+      "station",
+      "furniture"
+    ]
+  },
+  {
+    "id": "wooden_sword",
+    "name": "Wooden Sword",
+    "sprite": "/sprites/wooden_sword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "wooden_bow",
+    "name": "Wooden Bow",
+    "sprite": "/sprites/wooden_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "copper_sword",
+    "name": "Copper Shortsword",
+    "sprite": "/sprites/copper_sword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "copper_broadsword",
+    "name": "Copper Broadsword",
+    "sprite": "/sprites/copper_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "iron_sword",
+    "name": "Iron Shortsword",
+    "sprite": "/sprites/iron_sword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "iron_broadsword",
+    "name": "Iron Broadsword",
+    "sprite": "/sprites/iron_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "gold_sword",
+    "name": "Gold Shortsword",
+    "sprite": "/sprites/gold_sword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "gold_broadsword",
+    "name": "Gold Broadsword",
+    "sprite": "/sprites/gold_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "copper_helmet",
+    "name": "Copper Helmet",
+    "sprite": "/sprites/copper_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "copper_chainmail",
+    "name": "Copper Chainmail",
+    "sprite": "/sprites/copper_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "copper_greaves",
+    "name": "Copper Greaves",
+    "sprite": "/sprites/copper_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "iron_helmet",
+    "name": "Iron Helmet",
+    "sprite": "/sprites/iron_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "iron_chainmail",
+    "name": "Iron Chainmail",
+    "sprite": "/sprites/iron_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "iron_greaves",
+    "name": "Iron Greaves",
+    "sprite": "/sprites/iron_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "gold_helmet",
+    "name": "Gold Helmet",
+    "sprite": "/sprites/gold_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "gold_chainmail",
+    "name": "Gold Chainmail",
+    "sprite": "/sprites/gold_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "gold_greaves",
+    "name": "Gold Greaves",
+    "sprite": "/sprites/gold_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "wooden_arrow",
+    "name": "Wooden Arrow",
+    "sprite": "/sprites/wooden_arrow.png",
+    "tags": [
+      "ammo"
+    ]
+  },
+  {
+    "id": "flaming_arrow",
+    "name": "Flaming Arrow",
+    "sprite": "/sprites/flaming_arrow.png",
+    "tags": [
+      "ammo"
+    ]
+  },
+  {
+    "id": "iron_chain",
+    "name": "Iron Chain",
+    "sprite": "/sprites/iron_chain.png",
+    "tags": [
+      "material"
+    ]
+  },
+  {
+    "id": "hook",
+    "name": "Hook",
+    "sprite": "/sprites/hook.png",
+    "tags": [
+      "material",
+      "raw"
+    ]
+  },
+  {
+    "id": "grappling_hook",
+    "name": "Grappling Hook",
+    "sprite": "/sprites/grappling_hook.png",
+    "tags": [
+      "accessory"
+    ]
+  },
+  {
+    "id": "shuriken",
+    "name": "Shuriken",
+    "sprite": "/sprites/shuriken.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "glowstick",
+    "name": "Glowstick",
+    "sprite": "/sprites/glowstick.png",
+    "tags": [
+      "light"
+    ]
+  },
+  {
+    "id": "lesser_healing_potion",
+    "name": "Lesser Healing Potion",
+    "sprite": "/sprites/lesser_healing_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "healing_potion",
+    "name": "Healing Potion",
+    "sprite": "/sprites/healing_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "ironskin_potion",
+    "name": "Ironskin Potion",
+    "sprite": "/sprites/ironskin_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "swiftness_potion",
+    "name": "Swiftness Potion",
+    "sprite": "/sprites/swiftness_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "regeneration_potion",
+    "name": "Regeneration Potion",
+    "sprite": "/sprites/regeneration_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "night_owl_potion",
+    "name": "Night Owl Potion",
+    "sprite": "/sprites/night_owl_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "shine_potion",
+    "name": "Shine Potion",
+    "sprite": "/sprites/shine_potion.png",
+    "tags": [
+      "potion",
+      "consumable"
+    ]
+  },
+  {
+    "id": "wooden_platform",
+    "name": "Wooden Platform",
+    "sprite": "/sprites/wooden_platform.png",
+    "tags": [
+      "block",
+      "furniture"
+    ]
+  },
+  {
+    "id": "wooden_chair",
+    "name": "Wooden Chair",
+    "sprite": "/sprites/wooden_chair.png",
+    "tags": [
+      "furniture"
+    ]
+  },
+  {
+    "id": "wooden_table",
+    "name": "Wooden Table",
+    "sprite": "/sprites/wooden_table.png",
+    "tags": [
+      "furniture"
+    ]
+  },
+  {
+    "id": "wooden_door",
+    "name": "Wooden Door",
+    "sprite": "/sprites/wooden_door.png",
+    "tags": [
+      "furniture"
+    ]
+  },
+  {
+    "id": "bed",
+    "name": "Bed",
+    "sprite": "/sprites/bed.png",
+    "tags": [
+      "furniture"
+    ]
+  },
+  {
+    "id": "chest",
+    "name": "Chest",
+    "sprite": "/sprites/chest.png",
+    "tags": [
+      "furniture",
+      "storage"
+    ]
+  },
+  {
+    "id": "copper_coin",
+    "name": "Copper Coin",
+    "sprite": "/sprites/copper_coin.png",
+    "tags": [
+      "raw",
+      "currency"
+    ]
+  },
+  {
+    "id": "gold_coin",
+    "name": "Gold Coin",
+    "sprite": "/sprites/gold_coin.png",
+    "tags": [
+      "raw",
+      "currency"
+    ]
+  },
+  {
+    "id": "watch_copper",
+    "name": "Copper Watch",
+    "sprite": "/sprites/watch_copper.png",
+    "tags": [
+      "accessory",
+      "info"
+    ]
+  },
+  {
+    "id": "watch_gold",
+    "name": "Gold Watch",
+    "sprite": "/sprites/watch_gold.png",
+    "tags": [
+      "accessory",
+      "info"
+    ]
+  },
+  {
+    "id": "gold_chain",
+    "name": "Gold Chain",
+    "sprite": "/sprites/gold_chain.png",
+    "tags": [
+      "material"
+    ]
+  },
+  {
+    "id": "cobalt_shield",
+    "name": "Cobalt Shield",
+    "sprite": "/sprites/cobalt_shield.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "obsidian_skull",
+    "name": "Obsidian Skull",
+    "sprite": "/sprites/obsidian_skull.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "obsidian_horseshoe",
+    "name": "Obsidian Horseshoe",
+    "sprite": "/sprites/obsidian_horseshoe.png",
+    "tags": [
+      "accessory"
+    ]
+  },
+  {
+    "id": "lucky_horseshoe",
+    "name": "Lucky Horseshoe",
+    "sprite": "/sprites/lucky_horseshoe.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "aglet",
+    "name": "Aglet",
+    "sprite": "/sprites/aglet.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "anklet_of_wind",
+    "name": "Anklet of the Wind",
+    "sprite": "/sprites/anklet_of_wind.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "specter_boots",
+    "name": "Spectre Boots",
+    "sprite": "/sprites/specter_boots.png",
+    "tags": [
+      "accessory"
+    ]
+  },
+  {
+    "id": "hermes_boots",
+    "name": "Hermes Boots",
+    "sprite": "/sprites/hermes_boots.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "flurry_boots",
+    "name": "Flurry Boots",
+    "sprite": "/sprites/flurry_boots.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "rocket_boots",
+    "name": "Rocket Boots",
+    "sprite": "/sprites/rocket_boots.png",
+    "tags": [
+      "accessory",
+      "raw"
+    ]
+  },
+  {
+    "id": "mythril_sword",
+    "name": "Mythril Sword",
+    "sprite": "/sprites/mythril_sword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "mythril_helmet",
+    "name": "Mythril Helmet",
+    "sprite": "/sprites/mythril_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "mythril_chainmail",
+    "name": "Mythril Chainmail",
+    "sprite": "/sprites/mythril_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "mythril_greaves",
+    "name": "Mythril Greaves",
+    "sprite": "/sprites/mythril_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "demonite_ore",
+    "name": "Demonite Ore",
+    "sprite": "/sprites/demonite_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "crimtane_ore",
+    "name": "Crimtane Ore",
+    "sprite": "/sprites/crimtane_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "shadow_scale",
+    "name": "Shadow Scale",
+    "sprite": "/sprites/shadow_scale.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "tissue_sample",
+    "name": "Tissue Sample",
+    "sprite": "/sprites/tissue_sample.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "rotten_chunk",
+    "name": "Rotten Chunk",
+    "sprite": "/sprites/rotten_chunk.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "vertebrae",
+    "name": "Vertebrae",
+    "sprite": "/sprites/vertebrae.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "vile_powder",
+    "name": "Vile Powder",
+    "sprite": "/sprites/vile_powder.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "vicious_powder",
+    "name": "Vicious Powder",
+    "sprite": "/sprites/vicious_powder.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "hellstone",
+    "name": "Hellstone",
+    "sprite": "/sprites/hellstone.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "obsidian_block",
+    "name": "Obsidian",
+    "sprite": "/sprites/obsidian_block.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "meteorite_ore",
+    "name": "Meteorite",
+    "sprite": "/sprites/meteorite_ore.png",
+    "tags": [
+      "raw",
+      "ore"
+    ]
+  },
+  {
+    "id": "bone",
+    "name": "Bone",
+    "sprite": "/sprites/bone.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "jungle_spores",
+    "name": "Jungle Spores",
+    "sprite": "/sprites/jungle_spores.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "stinger",
+    "name": "Stinger",
+    "sprite": "/sprites/stinger.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "vine",
+    "name": "Vine",
+    "sprite": "/sprites/vine.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "beeswax",
+    "name": "Beeswax",
+    "sprite": "/sprites/beeswax.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "amethyst",
+    "name": "Amethyst",
+    "sprite": "/sprites/amethyst.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "topaz",
+    "name": "Topaz",
+    "sprite": "/sprites/topaz.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "sapphire",
+    "name": "Sapphire",
+    "sprite": "/sprites/sapphire.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "emerald",
+    "name": "Emerald",
+    "sprite": "/sprites/emerald.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "sprite": "/sprites/ruby.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "diamond",
+    "name": "Diamond",
+    "sprite": "/sprites/diamond.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "amber",
+    "name": "Amber",
+    "sprite": "/sprites/amber.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "lens",
+    "name": "Lens",
+    "sprite": "/sprites/lens.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "black_lens",
+    "name": "Black Lens",
+    "sprite": "/sprites/black_lens.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "feather",
+    "name": "Feather",
+    "sprite": "/sprites/feather.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "coral",
+    "name": "Coral",
+    "sprite": "/sprites/coral.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "fallen_star",
+    "name": "Fallen Star",
+    "sprite": "/sprites/fallen_star.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "silver_coin",
+    "name": "Silver Coin",
+    "sprite": "/sprites/silver_coin.png",
+    "tags": [
+      "raw",
+      "currency"
+    ]
+  },
+  {
+    "id": "platinum_coin",
+    "name": "Platinum Coin",
+    "sprite": "/sprites/platinum_coin.png",
+    "tags": [
+      "raw",
+      "currency"
+    ]
+  },
+  {
+    "id": "bottled_honey",
+    "name": "Bottled Honey",
+    "sprite": "/sprites/bottled_honey.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "hive",
+    "name": "Hive",
+    "sprite": "/sprites/hive.png",
+    "tags": [
+      "raw",
+      "material"
+    ]
+  },
+  {
+    "id": "handgun",
+    "name": "Handgun",
+    "sprite": "/sprites/handgun.png",
+    "tags": [
+      "weapon",
+      "ranged",
+      "raw"
+    ]
+  },
+  {
+    "id": "demonite_bar",
+    "name": "Demonite Bar",
+    "sprite": "/sprites/demonite_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "crimtane_bar",
+    "name": "Crimtane Bar",
+    "sprite": "/sprites/crimtane_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "hellstone_bar",
+    "name": "Hellstone Bar",
+    "sprite": "/sprites/hellstone_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "meteorite_bar",
+    "name": "Meteorite Bar",
+    "sprite": "/sprites/meteorite_bar.png",
+    "tags": [
+      "material",
+      "metal"
+    ]
+  },
+  {
+    "id": "tin_helmet",
+    "name": "Tin Helmet",
+    "sprite": "/sprites/tin_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "tin_chainmail",
+    "name": "Tin Chainmail",
+    "sprite": "/sprites/tin_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "tin_greaves",
+    "name": "Tin Greaves",
+    "sprite": "/sprites/tin_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "tin_shortsword",
+    "name": "Tin Shortsword",
+    "sprite": "/sprites/tin_shortsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "tin_broadsword",
+    "name": "Tin Broadsword",
+    "sprite": "/sprites/tin_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "tin_bow",
+    "name": "Tin Bow",
+    "sprite": "/sprites/tin_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "lead_helmet",
+    "name": "Lead Helmet",
+    "sprite": "/sprites/lead_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "lead_chainmail",
+    "name": "Lead Chainmail",
+    "sprite": "/sprites/lead_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "lead_greaves",
+    "name": "Lead Greaves",
+    "sprite": "/sprites/lead_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "lead_shortsword",
+    "name": "Lead Shortsword",
+    "sprite": "/sprites/lead_shortsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "lead_broadsword",
+    "name": "Lead Broadsword",
+    "sprite": "/sprites/lead_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "lead_bow",
+    "name": "Lead Bow",
+    "sprite": "/sprites/lead_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "silver_helmet",
+    "name": "Silver Helmet",
+    "sprite": "/sprites/silver_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "silver_chainmail",
+    "name": "Silver Chainmail",
+    "sprite": "/sprites/silver_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "silver_greaves",
+    "name": "Silver Greaves",
+    "sprite": "/sprites/silver_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "silver_shortsword",
+    "name": "Silver Shortsword",
+    "sprite": "/sprites/silver_shortsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "silver_broadsword",
+    "name": "Silver Broadsword",
+    "sprite": "/sprites/silver_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "silver_bow",
+    "name": "Silver Bow",
+    "sprite": "/sprites/silver_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "tungsten_helmet",
+    "name": "Tungsten Helmet",
+    "sprite": "/sprites/tungsten_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "tungsten_chainmail",
+    "name": "Tungsten Chainmail",
+    "sprite": "/sprites/tungsten_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "tungsten_greaves",
+    "name": "Tungsten Greaves",
+    "sprite": "/sprites/tungsten_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "tungsten_shortsword",
+    "name": "Tungsten Shortsword",
+    "sprite": "/sprites/tungsten_shortsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "tungsten_broadsword",
+    "name": "Tungsten Broadsword",
+    "sprite": "/sprites/tungsten_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "tungsten_bow",
+    "name": "Tungsten Bow",
+    "sprite": "/sprites/tungsten_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "platinum_helmet",
+    "name": "Platinum Helmet",
+    "sprite": "/sprites/platinum_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "platinum_chainmail",
+    "name": "Platinum Chainmail",
+    "sprite": "/sprites/platinum_chainmail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "platinum_greaves",
+    "name": "Platinum Greaves",
+    "sprite": "/sprites/platinum_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "platinum_shortsword",
+    "name": "Platinum Shortsword",
+    "sprite": "/sprites/platinum_shortsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "platinum_broadsword",
+    "name": "Platinum Broadsword",
+    "sprite": "/sprites/platinum_broadsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "platinum_bow",
+    "name": "Platinum Bow",
+    "sprite": "/sprites/platinum_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "copper_bow",
+    "name": "Copper Bow",
+    "sprite": "/sprites/copper_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "iron_bow",
+    "name": "Iron Bow",
+    "sprite": "/sprites/iron_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "gold_bow",
+    "name": "Gold Bow",
+    "sprite": "/sprites/gold_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "shadow_helmet",
+    "name": "Shadow Helmet",
+    "sprite": "/sprites/shadow_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "shadow_scalemail",
+    "name": "Shadow Scalemail",
+    "sprite": "/sprites/shadow_scalemail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "shadow_greaves",
+    "name": "Shadow Greaves",
+    "sprite": "/sprites/shadow_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "lights_bane",
+    "name": "Light's Bane",
+    "sprite": "/sprites/lights_bane.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "war_axe_of_the_night",
+    "name": "War Axe of the Night",
+    "sprite": "/sprites/war_axe_of_the_night.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "the_breaker",
+    "name": "The Breaker",
+    "sprite": "/sprites/the_breaker.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "ball_o_hurt",
+    "name": "Ball O' Hurt",
+    "sprite": "/sprites/ball_o_hurt.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "demon_bow",
+    "name": "Demon Bow",
+    "sprite": "/sprites/demon_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "nightmare_pickaxe",
+    "name": "Nightmare Pickaxe",
+    "sprite": "/sprites/nightmare_pickaxe.png",
+    "tags": [
+      "tool",
+      "melee"
+    ]
+  },
+  {
+    "id": "crimson_helmet",
+    "name": "Crimson Helmet",
+    "sprite": "/sprites/crimson_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "crimson_scalemail",
+    "name": "Crimson Scalemail",
+    "sprite": "/sprites/crimson_scalemail.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "crimson_greaves",
+    "name": "Crimson Greaves",
+    "sprite": "/sprites/crimson_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "blood_butcherer",
+    "name": "Blood Butcherer",
+    "sprite": "/sprites/blood_butcherer.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "the_meatball",
+    "name": "The Meatball",
+    "sprite": "/sprites/the_meatball.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "the_undertaker",
+    "name": "The Undertaker",
+    "sprite": "/sprites/the_undertaker.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "flesh_grinder",
+    "name": "Flesh Grinder",
+    "sprite": "/sprites/flesh_grinder.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "tendon_bow",
+    "name": "Tendon Bow",
+    "sprite": "/sprites/tendon_bow.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "deathbringer_pickaxe",
+    "name": "Deathbringer Pickaxe",
+    "sprite": "/sprites/deathbringer_pickaxe.png",
+    "tags": [
+      "tool",
+      "melee"
+    ]
+  },
+  {
+    "id": "molten_helmet",
+    "name": "Molten Helmet",
+    "sprite": "/sprites/molten_helmet.png",
+    "tags": [
+      "armor",
+      "head"
+    ]
+  },
+  {
+    "id": "molten_breastplate",
+    "name": "Molten Breastplate",
+    "sprite": "/sprites/molten_breastplate.png",
+    "tags": [
+      "armor",
+      "body"
+    ]
+  },
+  {
+    "id": "molten_greaves",
+    "name": "Molten Greaves",
+    "sprite": "/sprites/molten_greaves.png",
+    "tags": [
+      "armor",
+      "legs"
+    ]
+  },
+  {
+    "id": "fiery_greatsword",
+    "name": "Fiery Greatsword",
+    "sprite": "/sprites/fiery_greatsword.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "molten_fury",
+    "name": "Molten Fury",
+    "sprite": "/sprites/molten_fury.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "sunfury",
+    "name": "Sunfury",
+    "sprite": "/sprites/sunfury.png",
+    "tags": [
+      "weapon",
+      "melee"
+    ]
+  },
+  {
+    "id": "phoenix_blaster",
+    "name": "Phoenix Blaster",
+    "sprite": "/sprites/phoenix_blaster.png",
+    "tags": [
+      "weapon",
+      "ranged"
+    ]
+  },
+  {
+    "id": "molten_pickaxe",
+    "name": "Molten Pickaxe",
+    "sprite": "/sprites/molten_pickaxe.png",
+    "tags": [
+      "tool",
+      "melee"
+    ]
+  },
+  {
+    "id": "hellfire_arrow",
+    "name": "Hellfire Arrow",
+    "sprite": "/sprites/hellfire_arrow.png",
+    "tags": [
+      "ammo"
+    ]
+  }
 ]
