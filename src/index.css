@@ -328,7 +328,8 @@ body {
 
 /* ── Item node (React Flow) ──────────────────────────────────── */
 .item-node {
-  width: 200px;
+  width: 220px;
+  position: relative;
   background: var(--bg-panel);
   border: 2px solid var(--border-gold);
   box-shadow: inset 0 0 0 1px var(--border-inner), 0 2px 8px rgba(0,0,0,0.12);
@@ -365,20 +366,6 @@ body {
 
 .item-node-qty { font-size: 14px; color: var(--accent-gold); }
 
-/* ── Station display inside node ─────────────────────────────── */
-.item-node-station {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-}
-
-.item-node-station-img {
-  width: 24px;
-  height: 24px;
-  image-rendering: pixelated;
-  object-fit: contain;
-}
 
 /* ── Filter bar ──────────────────────────────────────────────── */
 .filter-bar {
@@ -404,19 +391,18 @@ body {
 .item-node.have { opacity: 0.4; }
 
 .item-node-check {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  color: var(--text-dim);
+  position: absolute;
+  top: 6px;
+  right: 6px;
   cursor: pointer;
   user-select: none;
 }
 .item-node-check input[type=checkbox] {
   accent-color: var(--accent-green);
   cursor: pointer;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
+  display: block;
 }
 
 /* ── Shopping panel (graph right side) ─────────────────────────── */
