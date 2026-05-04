@@ -409,6 +409,11 @@ body {
 .station-edge-label {
   position: relative;
   cursor: default;
+  z-index: 1;
+}
+
+.station-edge-label:hover {
+  z-index: 9999;
 }
 
 .station-edge-label::after {
@@ -428,6 +433,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s;
+  z-index: 9999;
 }
 
 .station-edge-label:hover::after {
@@ -435,8 +441,8 @@ body {
 }
 
 .station-edge-img {
-  width: 24px;
-  height: 24px;
+  width: 60px;
+  height: 60px;
   image-rendering: pixelated;
   object-fit: contain;
   display: block;
