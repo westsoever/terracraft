@@ -1,5 +1,6 @@
 import { useAppStore } from '@/store/useAppStore';
 import { itemById } from '@/lib/recipeIndex';
+import { assetUrl } from '@/lib/assetUrl';
 import { RecipeGraph } from '@/components/graph/RecipeGraph';
 
 export function MainPanel() {
@@ -14,7 +15,7 @@ export function MainPanel() {
       <div className="main-panel-header">
         <div className="t-slot">
           {selectedItem?.sprite ? (
-            <img src={selectedItem.sprite} alt={selectedItem.name} />
+            <img src={assetUrl(selectedItem.sprite)} alt={selectedItem.name} />
           ) : (
             <div className="t-slot-placeholder" />
           )}

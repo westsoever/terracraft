@@ -4,6 +4,7 @@ import type { Node, NodeProps } from '@xyflow/react';
 import type { ItemNodeData } from '@/types/terraria';
 import { stationById } from '@/lib/recipeIndex';
 import { useAppStore } from '@/store/useAppStore';
+import { assetUrl } from '@/lib/assetUrl';
 
 export type ItemNodeType = Node<ItemNodeData>;
 
@@ -23,7 +24,7 @@ export const ItemNode = memo(function ItemNode({ data }: NodeProps<ItemNodeType>
       <div className="item-node-top">
         <div className="t-slot" style={{ width: 32, height: 32 }}>
           {data.item.sprite ? (
-            <img src={data.item.sprite} alt={data.item.name} />
+            <img src={assetUrl(data.item.sprite)} alt={data.item.name} />
           ) : (
             <div className="t-slot-placeholder" />
           )}
@@ -36,7 +37,7 @@ export const ItemNode = memo(function ItemNode({ data }: NodeProps<ItemNodeType>
         {station && !data.isRaw && (
           <div className="item-node-station">
             {station.sprite && (
-              <img src={station.sprite} alt={station.name} className="item-node-station-img" />
+              <img src={assetUrl(station.sprite)} alt={station.name} className="item-node-station-img" />
             )}
             <span className="t-badge dim">{station.name}</span>
           </div>

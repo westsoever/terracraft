@@ -1,5 +1,6 @@
 import type { Item } from '@/types/terraria';
 import { primaryStationName } from '@/lib/recipeIndex';
+import { assetUrl } from '@/lib/assetUrl';
 
 interface Props {
   item: Item;
@@ -14,7 +15,7 @@ export function ItemCard({ item, isSelected, onClick }: Props) {
     <div className={`item-card${isSelected ? ' selected' : ''}`} onClick={onClick}>
       <div className="t-slot">
         {item.sprite ? (
-          <img src={item.sprite} alt={item.name} />
+          <img src={assetUrl(item.sprite)} alt={item.name} />
         ) : (
           <div className="t-slot-placeholder" />
         )}
