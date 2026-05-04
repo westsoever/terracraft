@@ -29,24 +29,22 @@ export function StationEdge({
   return (
     <>
       <BaseEdge id={id} path={edgePath} markerEnd={markerEnd} style={style} />
-      {station && (
+      {station?.sprite && (
         <EdgeLabelRenderer>
           <div
             className="station-edge-label"
             style={{
               position: 'absolute',
               transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
-              pointerEvents: 'none',
+              pointerEvents: 'all',
             }}
+            title={station.name}
           >
-            {station.sprite && (
-              <img
-                src={assetUrl(station.sprite)}
-                alt={station.name}
-                className="station-edge-img"
-              />
-            )}
-            <span>{station.name}</span>
+            <img
+              src={assetUrl(station.sprite)}
+              alt={station.name}
+              className="station-edge-img"
+            />
           </div>
         </EdgeLabelRenderer>
       )}

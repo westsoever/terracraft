@@ -407,24 +407,39 @@ body {
 
 /* ── Station edge label ──────────────────────────────────────────── */
 .station-edge-label {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  position: relative;
+  cursor: default;
+}
+
+.station-edge-label::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
   background: #1e1e38;
   border: 1px solid var(--border-gold);
   border-radius: 6px;
-  padding: 2px 6px;
+  padding: 3px 8px;
   font-size: 11px;
   font-family: monospace;
   color: var(--accent-gold);
   white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.station-edge-label:hover::after {
+  opacity: 1;
 }
 
 .station-edge-img {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   image-rendering: pixelated;
   object-fit: contain;
+  display: block;
 }
 
 /* ── Shopping panel (graph right side) ─────────────────────────── */
