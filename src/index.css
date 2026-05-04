@@ -349,7 +349,7 @@ body {
 }
 
 .item-node-name {
-  font-size: 13px;
+  font-size: 19.5px;
   color: var(--text-primary);
   line-height: 1.5;
   flex: 1;
@@ -403,6 +403,28 @@ body {
   width: 14px;
   height: 14px;
   display: block;
+}
+
+/* ── Station edge label ──────────────────────────────────────────── */
+.station-edge-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #1e1e38;
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--accent-gold);
+  white-space: nowrap;
+}
+
+.station-edge-img {
+  width: 18px;
+  height: 18px;
+  image-rendering: pixelated;
+  object-fit: contain;
 }
 
 /* ── Shopping panel (graph right side) ─────────────────────────── */

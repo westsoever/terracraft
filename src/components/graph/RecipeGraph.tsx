@@ -1,13 +1,15 @@
 import { useMemo } from 'react';
 import { ReactFlow, Controls } from '@xyflow/react';
-import type { NodeTypes } from '@xyflow/react';
+import type { NodeTypes, EdgeTypes } from '@xyflow/react';
 import { useRecipeTree } from '@/hooks/useRecipeTree';
 import { useAppStore } from '@/store/useAppStore';
 import { buildGraphFromTree } from '@/lib/graphLayout';
 import { ItemNode } from './ItemNode';
+import { StationEdge } from './StationEdge';
 import { ShoppingPanel } from './ShoppingPanel';
 
 const nodeTypes: NodeTypes = { itemNode: ItemNode as NodeTypes[string] };
+const edgeTypes: EdgeTypes = { stationEdge: StationEdge as EdgeTypes[string] };
 
 export function RecipeGraph() {
   const { treeRoot } = useRecipeTree();
@@ -29,6 +31,7 @@ export function RecipeGraph() {
           defaultNodes={nodes}
           defaultEdges={edges}
           nodeTypes={nodeTypes}
+          edgeTypes={edgeTypes}
           fitView
           fitViewOptions={{ padding: 0.15 }}
           nodesDraggable

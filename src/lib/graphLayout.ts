@@ -1,7 +1,6 @@
 import dagre from '@dagrejs/dagre';
 import { MarkerType, type Edge, type Node } from '@xyflow/react';
 import type { ItemNodeData, RecipeTreeNode } from '@/types/terraria';
-import { stationById } from './recipeIndex';
 
 const NODE_WIDTH = 220;
 const NODE_HEIGHT = 90;
@@ -20,7 +19,6 @@ export function buildGraphFromTree(treeRoot: RecipeTreeNode): {
   function traverse(node: RecipeTreeNode, parentNodeId: string | null) {
     const nodeId = node.nodeKey;
     const stationId = node.recipeUsed?.stationId ?? '';
-    const stationName = stationById.get(stationId)?.name ?? '';
 
     g.setNode(nodeId, { width: NODE_WIDTH, height: NODE_HEIGHT });
 
@@ -44,12 +42,10 @@ export function buildGraphFromTree(treeRoot: RecipeTreeNode): {
         id: edgeId,
         source: nodeId,
         target: parentNodeId,
-        label: stationName,
+        type: 'stationEdge',
+        data: { stationId },
         markerEnd: { type: MarkerType.ArrowClosed, color: '#c8a84b' },
         style: { stroke: '#c8a84b', strokeWidth: 1.5 },
-        labelStyle: { fill: '#c8a84b', fontSize: 11, fontFamily: 'monospace' },
-        labelBgStyle: { fill: '#1e1e38', fillOpacity: 0.9 },
-        labelBgPadding: [4, 2],
       });
     }
 
