@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [claude/crafting-recipes-tool-FmlKP]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
